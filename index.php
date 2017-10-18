@@ -34,9 +34,12 @@
             border: 1px solid green;
             height: 30px;
         }
+        table>tr>td {
+            background-color: yellow;
+        }
         .nav-left{
             border: 1px solid red;
-            position: absolute;
+            position: fixed;
             width: 10%;
             height: 30%;
             left: -8%;
@@ -181,7 +184,7 @@
                 <tr><td></td></tr>
                 <tr><td></td></tr>
             </table>
-            <table class="weekdays">
+            <table class=<?php echo date("Y-m-d D", strtotime("+1 day")); ?>>
                 <tr><td><?php echo date("Y-m-d D", strtotime("+1 day")); ?></td></tr>
                 <tr><td></td></tr>
                 <tr><td></td></tr>
@@ -216,7 +219,7 @@
                 <tr><td></td></tr>
                 <tr><td></td></tr>
             </table>
-            <table class="weekdays">
+            <table class=<?php echo date("Y-m-d D", strtotime("+2 day")); ?>>
                 <tr><td><?php echo date("Y-m-d D", strtotime("+2 day")); ?></td></tr>
                 <tr><td></td></tr>
                 <tr><td></td></tr>
@@ -251,7 +254,7 @@
                 <tr><td></td></tr>
                 <tr><td></td></tr>
             </table>
-            <table class="weekdays">
+            <table class=<?php echo date("Y-m-d D", strtotime("+3 day")); ?>>
                 <tr><td><?php echo date("Y-m-d D", strtotime("+3 day")); ?></td></tr>
                 <tr><td></td></tr>
                 <tr><td></td></tr>
@@ -286,7 +289,7 @@
                 <tr><td></td></tr>
                 <tr><td></td></tr>
             </table>
-            <table class="weekdays">
+            <table class=<?php echo date("Y-m-d D", strtotime("+4 day")); ?>>
                 <tr><td><?php echo date("Y-m-d D", strtotime("+4 day")); ?></td></tr>
                 <tr><td></td></tr>
                 <tr><td></td></tr>
@@ -321,7 +324,7 @@
                 <tr><td></td></tr>
                 <tr><td></td></tr>
             </table>
-            <table class="weekdays">
+            <table class=<?php echo date("Y-m-d D", strtotime("+5 day")); ?>>
                 <tr><td><?php echo date("Y-m-d D", strtotime("+5 day")); ?></td></tr>
                 <tr><td></td></tr>
                 <tr><td></td></tr>
@@ -356,7 +359,7 @@
                 <tr><td></td></tr>
                 <tr><td></td></tr>
             </table>
-            <table class="weekdays">
+            <table class=<?php echo date("Y-m-d D", strtotime("+6 day")); ?>>
                 <tr><td><?php echo date("Y-m-d D", strtotime("+6 day")); ?></td></tr>
                 <tr><td></td></tr>
                 <tr><td></td></tr>
@@ -400,6 +403,17 @@
     <p>two</p>
     <p>three</p>
     </div>
+
+    <script>
+        $(function(){
+            $("td").click(function(){
+                var Parent = $(this).parent();
+                var Grand_par = Parent.parent();
+                // Grand_par.css("color", "red");
+                alert(Grand_par.attr("class"));
+            })
+        })
+    </script>
 </body>
 
 </html>
