@@ -149,7 +149,7 @@
                 <tr><td>22:00</td></tr>
                 <tr><td>22:30</td></tr>
             </table>
-            <table class="weekdays">
+            <table class=<?php echo date("Y-m-d D"); ?>>
                 <tr><td><?php echo date("Y-m-d D"); ?></td></tr>
                 <tr><td></td></tr>
                 <tr><td></td></tr>
@@ -406,11 +406,16 @@
 
     <script>
         $(function(){
-            $("td").click(function(){
-                var Parent = $(this).parent();
-                var Grand_par = Parent.parent();
-                // Grand_par.css("color", "red");
-                alert(Grand_par.attr("class"));
+            // $("td").click(function(){
+            //     var string = $(this).parentsUntil("div");
+            //     alert(string.eq(2).attr("class"));
+            // })
+            $("td").mousedown(function(e){
+                var parent = $(this).parentsUntil("div");
+                var parentName = "."+parent.eq(2).attr("class");
+                var change = parentName+" td";
+                $(change).css("background-color", "red");
+                // alert(parent.eq(2).attr("class"));
             })
         })
     </script>
