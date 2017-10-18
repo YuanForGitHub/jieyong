@@ -34,6 +34,18 @@
             border: 1px solid green;
             height: 30px;
         }
+        .nav-left{
+            border: 1px solid red;
+            position: absolute;
+            width: 10%;
+            height: 30%;
+            left: -8%;
+            top: 35%;
+            transition: 1s;
+        }
+        .nav-left:hover {
+            left: -2%;
+        }
     </style>
     <title>Document</title>
 </head>
@@ -380,6 +392,13 @@
                 <tr><td></td></tr>
             </table>
         </div>
+    </div>
+
+    <!-- nav-left -->
+    <div class="nav-left">
+    <p>one</p>
+    <p>two</p>
+    <p>three</p>
     </div>
 </body>
 
