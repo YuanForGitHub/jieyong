@@ -61,6 +61,10 @@
             <td>yew-two</td>
             <td>yew-four</td>
         </tr>
+        <tr>
+            <td>yew-two</td>
+            <td>yew-four</td>
+        </tr>
     </table>
 
     <script>
@@ -70,12 +74,15 @@
                 $("body").append('<div class="add" style="position:absolute; z-index:+1; background-color:green; width: 30%;">20:31</div>');
                 var pos = $(this).position("top");
                 var td = $("td");
+                var height = parseInt(td.css("height"));
                 $(".add").css({"left":pos.left, "top":pos.top, "width":td.css("width"), "height":td.css("height")});
-                // $("body").mousemove(function(e){
-                //     // var height = split(".", td.css("height"));
-                //     // num = (e.pageY-pos.top)/td.css("height");
-                //     alert(td.css("height"));
-                // })
+                $("body").mousemove(function(e){
+                    num = parseInt((e.pageY-pos.top)/height)+1;
+                    $(".add").css("height", num*height+"px");
+                })
+            })
+            $("body").mouseup(function(e){
+                alert(num);
             })
         })
     </script>
