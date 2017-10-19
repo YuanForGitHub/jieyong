@@ -30,7 +30,7 @@
             float: left;
             width: 12.5%;
         }
-        table td{
+        table tr{
             border: 1px solid green;
             height: 30px;
         }
@@ -412,9 +412,9 @@
             // })
             $("td").mousedown(function(e){
                 var parent = $(this).parentsUntil("div");
-                var parentName = "."+parent.eq(2).attr("class");
-                var change = parentName+" td";
-                $(change).css("background-color", "red");
+                var parentTr = parent.eq(0);
+                parentTr.css({"background-color":"red", "border":"0px solid yellow"});
+                alert(parent.get(0).tagName);
                 // alert(parent.eq(2).attr("class"));
             })
         })
