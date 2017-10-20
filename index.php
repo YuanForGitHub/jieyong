@@ -50,14 +50,21 @@
             left: -2%;
         }
         .add{
+            opacity: 0.7;
+            overflow: hidden;
             background-color: yellow;
             position: absolute;
             z-index: +3;
         }
         .added{
+            opacity: 0.7;
+            overflow: hidden;
             background-color: yellow;
             position: absolute;
             z-index: +3;
+        }
+        .added:hover{
+            overflow: visible;
         }
     </style>
     <title>Document</title>
@@ -422,13 +429,13 @@
             var tr; //定位的tr
             var $div = $('<div class="add"></div>');
             $("td").mousedown(function(){
-                $("body").append('<div class="add">拖住选择</div>');
+                $("body").append('<div class="add">拖住选择111111111111<br>1111111111111111111111111<br>11111111111111111111111111111111111111111111111111111111</div>');
                 
                 pos = $(this).position();
                 $(".add").css({"top":pos.top, "left":pos.left, "width":width, "height":height });
                 $("body").mousemove(function(e){
                     num = parseInt((e.pageY-pos.top)/parseInt(height))+1;
-                    num = (num>0)?num : num+1;//防止只选择了一个，却没有覆盖
+                    num = (num>0)?num : 1;//防止只选择了一个，却没有覆盖
                     $(".add").css("height", num*parseInt(height)+"px");
                     event.stopPropagation(); 
                 })
@@ -437,7 +444,7 @@
             })
             $(document).mouseup(function(){
                 $("body").unbind();
-                $(".add").text(parent.eq(0).attr("class"));
+                // $(".add").text(parent.eq(0).attr("class"));
                 $(".add").addClass("added");
                 $(".added").removeClass("add");
             })
