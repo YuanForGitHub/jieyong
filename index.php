@@ -49,6 +49,16 @@
         .nav-left:hover {
             left: -2%;
         }
+        .add{
+            background-color: yellow;
+            position: absolute;
+            z-index: +3;
+        }
+        .added{
+            background-color: yellow;
+            position: absolute;
+            z-index: +3;
+        }
     </style>
     <title>Document</title>
 </head>
@@ -61,9 +71,6 @@
                 <?php echo "yes";?>
                 <span class="glyphicon glyphicon-user" aria-hidden="true"></span></p>
             <p>欢迎登录</p>
-            <p>
-                <?php echo "check out";?>
-            </p>
         </div>
         <!-- middle -->
         <div class="row">
@@ -406,16 +413,26 @@
 
     <script>
         $(function(){
-            // $("td").click(function(){
-            //     var string = $(this).parentsUntil("div");
-            //     alert(string.eq(2).attr("class"));
-            // })
-            $("td").mousedown(function(e){
-                var parent = $(this).parentsUntil("div");
-                var parentTr = parent.eq(0);
-                parentTr.css({"background-color":"red", "border":"0px solid yellow"});
-                alert(parent.get(0).tagName);
-                // alert(parent.eq(2).attr("class"));
+            var num = 0;
+            $("td").mousedown(function(){
+                $("body").append('<div class="add">拖住选择</div>');
+                
+                var width = $("td").css("width");
+                var height = $("td").css("height");
+                var pos = $(this).position();
+                $(".add").css({"top":pos.top, "left":pos.left, "width":width, "height":height });
+                $("body").mousemove(function(e){
+                    num = parseInt((e.pageY-pos.top)/parseInt(height))+1;
+                    num = (num>0)?num : num+1;
+                    $(".add").css("height", num*parseInt(height)+"px");
+                    event.stopPropagation(); 
+                })
+            })
+            $(document).mouseup(function(){
+                $("body").unbind();
+                $(".add").text(num/2+"个小时");
+                $(".add").addClass("added");
+                $(".added").removeClass("add");
             })
         })
     </script>
