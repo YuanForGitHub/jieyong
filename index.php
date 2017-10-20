@@ -49,12 +49,7 @@
         .nav-left:hover {
             left: -2%;
         }
-        .add{
-            background-color: yellow;
-            position: absolute;
-            z-index: +3;
-        }
-        .added{
+        .add, added{
             background-color: yellow;
             position: absolute;
             z-index: +3;
