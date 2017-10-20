@@ -41,6 +41,12 @@
         .nav-left:hover {
             left: -2%;
         }
+        .add{
+            background-color: green;
+            position:absolute; 
+            z-index:+1;
+            width: 30%;
+        }
     </style>
     <title>Document</title>
 </head>
@@ -71,7 +77,7 @@
         $(function(){
             var num = 0;
             $("td").mousedown(function(){   
-                $("body").append('<div class="add" style="position:absolute; z-index:+1; background-color:green; width: 30%;">20:31</div>');
+                $("body").append('<div class="add">20:31</div>');
                 var pos = $(this).position("top");
                 var td = $("td");
                 var height = parseInt(td.css("height"));
@@ -79,10 +85,14 @@
                 $("body").mousemove(function(e){
                     num = parseInt((e.pageY-pos.top)/height)+1;
                     $(".add").css("height", num*height+"px");
+                    event.stopPropagation();                    
                 })
             })
-            $("body").mouseup(function(e){
-                alert(num);
+            $(document).mouseup(function(){
+                $("body").unbind();
+            })
+            $("div").click(function(){
+                $(".add").remove();
             })
         })
     </script>
