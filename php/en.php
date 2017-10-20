@@ -41,7 +41,7 @@
         .nav-left:hover {
             left: -2%;
         }
-        .add{
+        .add, .added{
             background-color: green;
             position:absolute; 
             z-index:+1;
@@ -90,9 +90,11 @@
             })
             $(document).mouseup(function(){
                 $("body").unbind();
+                $(".add").addClass("added");
+                $(".added").removeClass("add");
             })
             $("div").click(function(){
-                $(".add").remove();
+                $(".added").remove();
             })
         })
     </script>
