@@ -24,7 +24,7 @@
             border: 1px solid red;
         }
         .body{
-            border: 1px solid blue;
+            border: 1px solid purple;
         }
         table {
             float: left;
@@ -438,6 +438,13 @@
                 $(".add").addClass("added");
                 $(".added").removeClass("add");
             })
+            // var tr = $(".2017-10-20").children("tr.7:00");
+            var tr = $(".2017-10-20").find(".7:00");
+            tr.css("backgournd-color", "red");
+            // $("body").append('<div class="add">test</div>');
+            // $(".add").css({"left":tr.position().left, "top":tr.position().top, "width":width, "height":parseInt(height)*3+"px"});
+            // $(".add").addClass("added");
+            // $(".added").removeClass("add");
         })
     </script>
 </body>
