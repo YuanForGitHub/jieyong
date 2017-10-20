@@ -158,248 +158,248 @@
             </table>
             <table class=<?php echo date("Y-m-d D"); ?>>
                 <tr><td><?php echo date("Y-m-d D"); ?></td></tr>
-                <tr><td></td></tr>
-                <tr><td></td></tr>
-                <tr><td></td></tr>
-                <tr><td></td></tr>
-                <tr><td></td></tr>
-                <tr><td></td></tr>
-                <tr><td></td></tr>
-                <tr><td></td></tr>
-                <tr><td></td></tr>
-                <tr><td></td></tr>
-                <tr><td></td></tr>
-                <tr><td></td></tr>
-                <tr><td></td></tr>
-                <tr><td></td></tr>
-                <tr><td></td></tr>
-                <tr><td></td></tr>
-                <tr><td></td></tr>
-                <tr><td></td></tr>
-                <tr><td></td></tr>
-                <tr><td></td></tr>
-                <tr><td></td></tr>
-                <tr><td></td></tr>
-                <tr><td></td></tr>
-                <tr><td></td></tr>
-                <tr><td></td></tr>
-                <tr><td></td></tr>
-                <tr><td></td></tr>
-                <tr><td></td></tr>
-                <tr><td></td></tr>
-                <tr><td></td></tr>
-                <tr><td></td></tr>
-                <tr><td></td></tr>
+                <tr class="7:00"><td></td></tr>
+                <tr class="7:30"><td></td></tr>
+                <tr class="8:00"><td></td></tr>
+                <tr class="8:30"><td></td></tr>
+                <tr class="9:00"><td></td></tr>
+                <tr class="9:30"><td></td></tr>
+                <tr class="10:00"><td></td></tr>
+                <tr class="10:30"><td></td></tr>
+                <tr class="11:00"><td></td></tr>
+                <tr class="11:30"><td></td></tr>
+                <tr class="12:00"><td></td></tr>
+                <tr class="12:30"><td></td></tr>
+                <tr class="13:00"><td></td></tr>
+                <tr class="13:30"><td></td></tr>
+                <tr class="14:00"><td></td></tr>
+                <tr class="14:30"><td></td></tr>
+                <tr class="15:00"><td></td></tr>
+                <tr class="15:30"><td></td></tr>
+                <tr class="16:00"><td></td></tr>
+                <tr class="16:30"><td></td></tr>
+                <tr class="17:00"><td></td></tr>
+                <tr class="17:30"><td></td></tr>
+                <tr class="18:00"><td></td></tr>
+                <tr class="18:30"><td></td></tr>
+                <tr class="19:00"><td></td></tr>
+                <tr class="19:30"><td></td></tr>
+                <tr class="20:00"><td></td></tr>
+                <tr class="20:30"><td></td></tr>
+                <tr class="21:00"><td></td></tr>
+                <tr class="21:30"><td></td></tr>
+                <tr class="22:00"><td></td></tr>
+                <tr class="22:30"><td></td></tr>
             </table>
             <table class=<?php echo date("Y-m-d D", strtotime("+1 day")); ?>>
                 <tr><td><?php echo date("Y-m-d D", strtotime("+1 day")); ?></td></tr>
-                <tr><td></td></tr>
-                <tr><td></td></tr>
-                <tr><td></td></tr>
-                <tr><td></td></tr>
-                <tr><td></td></tr>
-                <tr><td></td></tr>
-                <tr><td></td></tr>
-                <tr><td></td></tr>
-                <tr><td></td></tr>
-                <tr><td></td></tr>
-                <tr><td></td></tr>
-                <tr><td></td></tr>
-                <tr><td></td></tr>
-                <tr><td></td></tr>
-                <tr><td></td></tr>
-                <tr><td></td></tr>
-                <tr><td></td></tr>
-                <tr><td></td></tr>
-                <tr><td></td></tr>
-                <tr><td></td></tr>
-                <tr><td></td></tr>
-                <tr><td></td></tr>
-                <tr><td></td></tr>
-                <tr><td></td></tr>
-                <tr><td></td></tr>
-                <tr><td></td></tr>
-                <tr><td></td></tr>
-                <tr><td></td></tr>
-                <tr><td></td></tr>
-                <tr><td></td></tr>
-                <tr><td></td></tr>
-                <tr><td></td></tr>
+                <tr class="7:00"><td></td></tr>
+                <tr class="7:30"><td></td></tr>
+                <tr class="8:00"><td></td></tr>
+                <tr class="8:30"><td></td></tr>
+                <tr class="9:00"><td></td></tr>
+                <tr class="9:30"><td></td></tr>
+                <tr class="10:00"><td></td></tr>
+                <tr class="10:30"><td></td></tr>
+                <tr class="11:00"><td></td></tr>
+                <tr class="11:30"><td></td></tr>
+                <tr class="12:00"><td></td></tr>
+                <tr class="12:30"><td></td></tr>
+                <tr class="13:00"><td></td></tr>
+                <tr class="13:30"><td></td></tr>
+                <tr class="14:00"><td></td></tr>
+                <tr class="14:30"><td></td></tr>
+                <tr class="15:00"><td></td></tr>
+                <tr class="15:30"><td></td></tr>
+                <tr class="16:00"><td></td></tr>
+                <tr class="16:30"><td></td></tr>
+                <tr class="17:00"><td></td></tr>
+                <tr class="17:30"><td></td></tr>
+                <tr class="18:00"><td></td></tr>
+                <tr class="18:30"><td></td></tr>
+                <tr class="19:00"><td></td></tr>
+                <tr class="19:30"><td></td></tr>
+                <tr class="20:00"><td></td></tr>
+                <tr class="20:30"><td></td></tr>
+                <tr class="21:00"><td></td></tr>
+                <tr class="21:30"><td></td></tr>
+                <tr class="22:00"><td></td></tr>
+                <tr class="22:30"><td></td></tr>
             </table>
             <table class=<?php echo date("Y-m-d D", strtotime("+2 day")); ?>>
                 <tr><td><?php echo date("Y-m-d D", strtotime("+2 day")); ?></td></tr>
-                <tr><td></td></tr>
-                <tr><td></td></tr>
-                <tr><td></td></tr>
-                <tr><td></td></tr>
-                <tr><td></td></tr>
-                <tr><td></td></tr>
-                <tr><td></td></tr>
-                <tr><td></td></tr>
-                <tr><td></td></tr>
-                <tr><td></td></tr>
-                <tr><td></td></tr>
-                <tr><td></td></tr>
-                <tr><td></td></tr>
-                <tr><td></td></tr>
-                <tr><td></td></tr>
-                <tr><td></td></tr>
-                <tr><td></td></tr>
-                <tr><td></td></tr>
-                <tr><td></td></tr>
-                <tr><td></td></tr>
-                <tr><td></td></tr>
-                <tr><td></td></tr>
-                <tr><td></td></tr>
-                <tr><td></td></tr>
-                <tr><td></td></tr>
-                <tr><td></td></tr>
-                <tr><td></td></tr>
-                <tr><td></td></tr>
-                <tr><td></td></tr>
-                <tr><td></td></tr>
-                <tr><td></td></tr>
-                <tr><td></td></tr>
+                <tr class="7:00"><td></td></tr>
+                <tr class="7:30"><td></td></tr>
+                <tr class="8:00"><td></td></tr>
+                <tr class="8:30"><td></td></tr>
+                <tr class="9:00"><td></td></tr>
+                <tr class="9:30"><td></td></tr>
+                <tr class="10:00"><td></td></tr>
+                <tr class="10:30"><td></td></tr>
+                <tr class="11:00"><td></td></tr>
+                <tr class="11:30"><td></td></tr>
+                <tr class="12:00"><td></td></tr>
+                <tr class="12:30"><td></td></tr>
+                <tr class="13:00"><td></td></tr>
+                <tr class="13:30"><td></td></tr>
+                <tr class="14:00"><td></td></tr>
+                <tr class="14:30"><td></td></tr>
+                <tr class="15:00"><td></td></tr>
+                <tr class="15:30"><td></td></tr>
+                <tr class="16:00"><td></td></tr>
+                <tr class="16:30"><td></td></tr>
+                <tr class="17:00"><td></td></tr>
+                <tr class="17:30"><td></td></tr>
+                <tr class="18:00"><td></td></tr>
+                <tr class="18:30"><td></td></tr>
+                <tr class="19:00"><td></td></tr>
+                <tr class="19:30"><td></td></tr>
+                <tr class="20:00"><td></td></tr>
+                <tr class="20:30"><td></td></tr>
+                <tr class="21:00"><td></td></tr>
+                <tr class="21:30"><td></td></tr>
+                <tr class="22:00"><td></td></tr>
+                <tr class="22:30"><td></td></tr>
             </table>
             <table class=<?php echo date("Y-m-d D", strtotime("+3 day")); ?>>
                 <tr><td><?php echo date("Y-m-d D", strtotime("+3 day")); ?></td></tr>
-                <tr><td></td></tr>
-                <tr><td></td></tr>
-                <tr><td></td></tr>
-                <tr><td></td></tr>
-                <tr><td></td></tr>
-                <tr><td></td></tr>
-                <tr><td></td></tr>
-                <tr><td></td></tr>
-                <tr><td></td></tr>
-                <tr><td></td></tr>
-                <tr><td></td></tr>
-                <tr><td></td></tr>
-                <tr><td></td></tr>
-                <tr><td></td></tr>
-                <tr><td></td></tr>
-                <tr><td></td></tr>
-                <tr><td></td></tr>
-                <tr><td></td></tr>
-                <tr><td></td></tr>
-                <tr><td></td></tr>
-                <tr><td></td></tr>
-                <tr><td></td></tr>
-                <tr><td></td></tr>
-                <tr><td></td></tr>
-                <tr><td></td></tr>
-                <tr><td></td></tr>
-                <tr><td></td></tr>
-                <tr><td></td></tr>
-                <tr><td></td></tr>
-                <tr><td></td></tr>
-                <tr><td></td></tr>
-                <tr><td></td></tr>
+                <tr class="7:00"><td></td></tr>
+                <tr class="7:30"><td></td></tr>
+                <tr class="8:00"><td></td></tr>
+                <tr class="8:30"><td></td></tr>
+                <tr class="9:00"><td></td></tr>
+                <tr class="9:30"><td></td></tr>
+                <tr class="10:00"><td></td></tr>
+                <tr class="10:30"><td></td></tr>
+                <tr class="11:00"><td></td></tr>
+                <tr class="11:30"><td></td></tr>
+                <tr class="12:00"><td></td></tr>
+                <tr class="12:30"><td></td></tr>
+                <tr class="13:00"><td></td></tr>
+                <tr class="13:30"><td></td></tr>
+                <tr class="14:00"><td></td></tr>
+                <tr class="14:30"><td></td></tr>
+                <tr class="15:00"><td></td></tr>
+                <tr class="15:30"><td></td></tr>
+                <tr class="16:00"><td></td></tr>
+                <tr class="16:30"><td></td></tr>
+                <tr class="17:00"><td></td></tr>
+                <tr class="17:30"><td></td></tr>
+                <tr class="18:00"><td></td></tr>
+                <tr class="18:30"><td></td></tr>
+                <tr class="19:00"><td></td></tr>
+                <tr class="19:30"><td></td></tr>
+                <tr class="20:00"><td></td></tr>
+                <tr class="20:30"><td></td></tr>
+                <tr class="21:00"><td></td></tr>
+                <tr class="21:30"><td></td></tr>
+                <tr class="22:00"><td></td></tr>
+                <tr class="22:30"><td></td></tr>
             </table>
             <table class=<?php echo date("Y-m-d D", strtotime("+4 day")); ?>>
                 <tr><td><?php echo date("Y-m-d D", strtotime("+4 day")); ?></td></tr>
-                <tr><td></td></tr>
-                <tr><td></td></tr>
-                <tr><td></td></tr>
-                <tr><td></td></tr>
-                <tr><td></td></tr>
-                <tr><td></td></tr>
-                <tr><td></td></tr>
-                <tr><td></td></tr>
-                <tr><td></td></tr>
-                <tr><td></td></tr>
-                <tr><td></td></tr>
-                <tr><td></td></tr>
-                <tr><td></td></tr>
-                <tr><td></td></tr>
-                <tr><td></td></tr>
-                <tr><td></td></tr>
-                <tr><td></td></tr>
-                <tr><td></td></tr>
-                <tr><td></td></tr>
-                <tr><td></td></tr>
-                <tr><td></td></tr>
-                <tr><td></td></tr>
-                <tr><td></td></tr>
-                <tr><td></td></tr>
-                <tr><td></td></tr>
-                <tr><td></td></tr>
-                <tr><td></td></tr>
-                <tr><td></td></tr>
-                <tr><td></td></tr>
-                <tr><td></td></tr>
-                <tr><td></td></tr>
-                <tr><td></td></tr>
+                <tr class="7:00"><td></td></tr>
+                <tr class="7:30"><td></td></tr>
+                <tr class="8:00"><td></td></tr>
+                <tr class="8:30"><td></td></tr>
+                <tr class="9:00"><td></td></tr>
+                <tr class="9:30"><td></td></tr>
+                <tr class="10:00"><td></td></tr>
+                <tr class="10:30"><td></td></tr>
+                <tr class="11:00"><td></td></tr>
+                <tr class="11:30"><td></td></tr>
+                <tr class="12:00"><td></td></tr>
+                <tr class="12:30"><td></td></tr>
+                <tr class="13:00"><td></td></tr>
+                <tr class="13:30"><td></td></tr>
+                <tr class="14:00"><td></td></tr>
+                <tr class="14:30"><td></td></tr>
+                <tr class="15:00"><td></td></tr>
+                <tr class="15:30"><td></td></tr>
+                <tr class="16:00"><td></td></tr>
+                <tr class="16:30"><td></td></tr>
+                <tr class="17:00"><td></td></tr>
+                <tr class="17:30"><td></td></tr>
+                <tr class="18:00"><td></td></tr>
+                <tr class="18:30"><td></td></tr>
+                <tr class="19:00"><td></td></tr>
+                <tr class="19:30"><td></td></tr>
+                <tr class="20:00"><td></td></tr>
+                <tr class="20:30"><td></td></tr>
+                <tr class="21:00"><td></td></tr>
+                <tr class="21:30"><td></td></tr>
+                <tr class="22:00"><td></td></tr>
+                <tr class="22:30"><td></td></tr>
             </table>
             <table class=<?php echo date("Y-m-d D", strtotime("+5 day")); ?>>
                 <tr><td><?php echo date("Y-m-d D", strtotime("+5 day")); ?></td></tr>
-                <tr><td></td></tr>
-                <tr><td></td></tr>
-                <tr><td></td></tr>
-                <tr><td></td></tr>
-                <tr><td></td></tr>
-                <tr><td></td></tr>
-                <tr><td></td></tr>
-                <tr><td></td></tr>
-                <tr><td></td></tr>
-                <tr><td></td></tr>
-                <tr><td></td></tr>
-                <tr><td></td></tr>
-                <tr><td></td></tr>
-                <tr><td></td></tr>
-                <tr><td></td></tr>
-                <tr><td></td></tr>
-                <tr><td></td></tr>
-                <tr><td></td></tr>
-                <tr><td></td></tr>
-                <tr><td></td></tr>
-                <tr><td></td></tr>
-                <tr><td></td></tr>
-                <tr><td></td></tr>
-                <tr><td></td></tr>
-                <tr><td></td></tr>
-                <tr><td></td></tr>
-                <tr><td></td></tr>
-                <tr><td></td></tr>
-                <tr><td></td></tr>
-                <tr><td></td></tr>
-                <tr><td></td></tr>
-                <tr><td></td></tr>
+                <tr class="7:00"><td></td></tr>
+                <tr class="7:30"><td></td></tr>
+                <tr class="8:00"><td></td></tr>
+                <tr class="8:30"><td></td></tr>
+                <tr class="9:00"><td></td></tr>
+                <tr class="9:30"><td></td></tr>
+                <tr class="10:00"><td></td></tr>
+                <tr class="10:30"><td></td></tr>
+                <tr class="11:00"><td></td></tr>
+                <tr class="11:30"><td></td></tr>
+                <tr class="12:00"><td></td></tr>
+                <tr class="12:30"><td></td></tr>
+                <tr class="13:00"><td></td></tr>
+                <tr class="13:30"><td></td></tr>
+                <tr class="14:00"><td></td></tr>
+                <tr class="14:30"><td></td></tr>
+                <tr class="15:00"><td></td></tr>
+                <tr class="15:30"><td></td></tr>
+                <tr class="16:00"><td></td></tr>
+                <tr class="16:30"><td></td></tr>
+                <tr class="17:00"><td></td></tr>
+                <tr class="17:30"><td></td></tr>
+                <tr class="18:00"><td></td></tr>
+                <tr class="18:30"><td></td></tr>
+                <tr class="19:00"><td></td></tr>
+                <tr class="19:30"><td></td></tr>
+                <tr class="20:00"><td></td></tr>
+                <tr class="20:30"><td></td></tr>
+                <tr class="21:00"><td></td></tr>
+                <tr class="21:30"><td></td></tr>
+                <tr class="22:00"><td></td></tr>
+                <tr class="22:30"><td></td></tr>
             </table>
             <table class=<?php echo date("Y-m-d D", strtotime("+6 day")); ?>>
                 <tr><td><?php echo date("Y-m-d D", strtotime("+6 day")); ?></td></tr>
-                <tr><td></td></tr>
-                <tr><td></td></tr>
-                <tr><td></td></tr>
-                <tr><td></td></tr>
-                <tr><td></td></tr>
-                <tr><td></td></tr>
-                <tr><td></td></tr>
-                <tr><td></td></tr>
-                <tr><td></td></tr>
-                <tr><td></td></tr>
-                <tr><td></td></tr>
-                <tr><td></td></tr>
-                <tr><td></td></tr>
-                <tr><td></td></tr>
-                <tr><td></td></tr>
-                <tr><td></td></tr>
-                <tr><td></td></tr>
-                <tr><td></td></tr>
-                <tr><td></td></tr>
-                <tr><td></td></tr>
-                <tr><td></td></tr>
-                <tr><td></td></tr>
-                <tr><td></td></tr>
-                <tr><td></td></tr>
-                <tr><td></td></tr>
-                <tr><td></td></tr>
-                <tr><td></td></tr>
-                <tr><td></td></tr>
-                <tr><td></td></tr>
-                <tr><td></td></tr>
-                <tr><td></td></tr>
-                <tr><td></td></tr>
+                <tr class="7:00"><td></td></tr>
+                <tr class="7:30"><td></td></tr>
+                <tr class="8:00"><td></td></tr>
+                <tr class="8:30"><td></td></tr>
+                <tr class="9:00"><td></td></tr>
+                <tr class="9:30"><td></td></tr>
+                <tr class="10:00"><td></td></tr>
+                <tr class="10:30"><td></td></tr>
+                <tr class="11:00"><td></td></tr>
+                <tr class="11:30"><td></td></tr>
+                <tr class="12:00"><td></td></tr>
+                <tr class="12:30"><td></td></tr>
+                <tr class="13:00"><td></td></tr>
+                <tr class="13:30"><td></td></tr>
+                <tr class="14:00"><td></td></tr>
+                <tr class="14:30"><td></td></tr>
+                <tr class="15:00"><td></td></tr>
+                <tr class="15:30"><td></td></tr>
+                <tr class="16:00"><td></td></tr>
+                <tr class="16:30"><td></td></tr>
+                <tr class="17:00"><td></td></tr>
+                <tr class="17:30"><td></td></tr>
+                <tr class="18:00"><td></td></tr>
+                <tr class="18:30"><td></td></tr>
+                <tr class="19:00"><td></td></tr>
+                <tr class="19:30"><td></td></tr>
+                <tr class="20:00"><td></td></tr>
+                <tr class="20:30"><td></td></tr>
+                <tr class="21:00"><td></td></tr>
+                <tr class="21:30"><td></td></tr>
+                <tr class="22:00"><td></td></tr>
+                <tr class="22:30"><td></td></tr>
             </table>
         </div>
     </div>
@@ -414,12 +414,14 @@
     <script>
         $(function(){
             var num = 0;
+            var width = $("td").css("width");
+            var height = $("td").css("height");
+            var pos;//被点击的单元格位置
+            var parent;//被点击的单元格父元素(array)
             $("td").mousedown(function(){
                 $("body").append('<div class="add">拖住选择</div>');
                 
-                var width = $("td").css("width");
-                var height = $("td").css("height");
-                var pos = $(this).position();
+                pos = $(this).position();
                 $(".add").css({"top":pos.top, "left":pos.left, "width":width, "height":height });
                 $("body").mousemove(function(e){
                     num = parseInt((e.pageY-pos.top)/parseInt(height))+1;
@@ -427,10 +429,12 @@
                     $(".add").css("height", num*parseInt(height)+"px");
                     event.stopPropagation(); 
                 })
+
+                parent = $(this).parentsUntil("div");
             })
             $(document).mouseup(function(){
                 $("body").unbind();
-                $(".add").text(num/2+"个小时");
+                $(".add").text(parent.eq(0).attr("class"));
                 $(".add").addClass("added");
                 $(".added").removeClass("add");
             })
