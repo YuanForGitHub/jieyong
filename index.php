@@ -470,6 +470,7 @@
             })
             $(document).mouseup(function(){
                 if(!flag) return;
+                else flag = false;
 
                 $("body").unbind();
 
@@ -477,24 +478,26 @@
                 $("#Modal").modal(function(){
                     show: true;
                 })
-                $(".close, .Close").click(function(){
-                    $(".add").remove();
-                })
+            })
+            $(".close, .Close").click(function(){
+                $(".add").remove();
             })
             $(".send").click(function(){
-                // 
+                // Send Message
                 $.post("ss.php",
-                {
-                    content:$(".add").text($itself.attr("class")),
-                    name:"yes"
-                },
-                function(data,status){
-                    $("body").append('<div class="added">'+data+':'+status+'</div>');
+                    {
+                        name:"菜鸟教程",
+                        content:$($itself).attr("class")
+                    },
+                    function(data,status){
+                        alert("数据: \n" + data + "\n状态: " + status);
                 });
                 // change ClassName
                 $(".add").text($itself.attr("class")+" "+num+"个").html();
                 $(".add").addClass("added");
                 $(".added").removeClass("add");
+                // close itself
+                $(".close").trigger("click");
             })
 
             // 从数据库读取数据复原
