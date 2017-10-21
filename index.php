@@ -420,7 +420,7 @@
 
     <!-- modal -->
     <!-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">open</button> -->
-    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModallLabel">
+    <div class="modal fade" id="Modal" tabindex="-1" role="dialog" aria-labelledby="exampleModallLabel">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
@@ -474,7 +474,7 @@
                 $("body").unbind();
 
                 // trigger modal dialog
-                $("#exampleModal").modal(function(){
+                $("#Modal").modal(function(){
                     show: true;
                 })
                 $(".close, .Close").click(function(){
@@ -482,8 +482,17 @@
                 })
             })
             $(".send").click(function(){
+                // 
+                $.post("ss.php",
+                {
+                    content:$(".add").text($itself.attr("class")),
+                    name:"yes"
+                },
+                function(data,status){
+                    $("body").append('<div class="added">'+data+':'+status+'</div>');
+                });
                 // change ClassName
-                $(".add").text($itself.attr("class")+" "+num+"个");
+                $(".add").text($itself.attr("class")+" "+num+"个").html();
                 $(".add").addClass("added");
                 $(".added").removeClass("add");
             })
