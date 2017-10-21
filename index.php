@@ -413,11 +413,34 @@
 
     <!-- nav-left -->
     <div class="nav-left">
-    <p>one</p>
-    <p>two</p>
-    <p>three</p>
+        <p>one</p>
+        <p>two</p>
+        <p>three</p>
     </div>
 
+    <!-- modal -->
+    <!-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">open</button> -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModallLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    <h4 class="modal-title" id="exampleModalLabel">NewMessage</h4>
+                </div>
+                <div class="modal-body">
+                    yes
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default Close" data-dismiss="modal">Close</button>
+                    <button tupe="button" class="btn btn-primary send">SendMessage</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    </button>
     <script>
         $(function(){
             var num = 0;
@@ -425,9 +448,10 @@
             var height = $("td").css("height");
             var pos;//被点击的单元格位置
             var parent;//被点击的单元格父元素(array)
-            var $itself;
             var tbody; //从数据库查询添加的table所属的tbody
             var tr; //定位的tr
+            var flag=false;//用来判断是否是点击tr
+            var $itself;
             var $div = $('<div class="add"></div>');
             $(".active").mousedown(function(){
                 $("body").append('<div class="add">拖住选择</div>');
@@ -442,21 +466,40 @@
                 })
 
                 $itself = $(this);
+                flag = true;
             })
             $(document).mouseup(function(){
+                if(!flag) return;
+
                 $("body").unbind();
+
+                // trigger modal dialog
+                $("#exampleModal").modal(function(){
+                    show: true;
+                })
+                $(".close, .Close").click(function(){
+                    $(".add").remove();
+                })
+            })
+            $(".send").click(function(){
+                // change ClassName
                 $(".add").text($itself.attr("class")+" "+num+"个");
                 $(".add").addClass("added");
                 $(".added").removeClass("add");
             })
+
+            // 从数据库读取数据复原
             tbody = $(".2017-10-21").children();
             tr = tbody.children();
             pos = tr.eq(2).position();
             $div.text('yes');
             $("body").append($div);
-            $(".add").css({"left":pos.left, "top":pos.top, "width": width, "height":height});
+            $(".add").css({"left":pos.left, "top":pos.top, "width": width, "height":parseInt(height)*3+"px"});
             $(".add").addClass("added");
             $(".added").removeClass("add");
+
+            //模态框
+            $("#myModal").on('shown')
         })
     </script>
 </body>
