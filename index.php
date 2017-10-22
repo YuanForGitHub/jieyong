@@ -1,8 +1,7 @@
 <?php
 
 session_start();
-
-$_SESSION['user']='root';
+$_SESSION['user'] = 'root';
 $_SESSION['room']='403';
 $_SESSION['user_id']=1;
 $_SESSION['room_id']=1;
@@ -499,11 +498,11 @@ $_SESSION['room_id']=1;
                         room: $(".list").text()
                     },
                     function(data,status){
-                        content = data.toString();
                         alert("数据: \n" + data + "\n状态: " + status);
                     });
                 // change ClassName
-                $(".add").text(content);
+                content = "使用者:"+user+"<br>"+"借用场地："+room+"<br>"+"借用原因:"+reason+"<br>"+"借用时长:";
+                $(".add").val(content);
                 $(".add").addClass("added");
                 $(".added").removeClass("add");
 
