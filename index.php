@@ -97,15 +97,15 @@ $_SESSION['room_id']=1;
                 <h4>课室：</h4>
             </div>
             <div class="col-xs-4 dropdown" style="padding-left: 0%;">
-                <button type="button" class="btn btn-default dropdown-toggle list" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="width: 90%;">生科院101（容量52人）<span class="caret"></span></button>
+                <button type="button" class="btn btn-default dropdown-toggle list selected" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="width: 90%;">1<span class="caret"></span></button>
                 <ul class="dropdown-menu" aria-labelledby="dLabel">
-                    <li><a href="#" data-per="1">生科院101（容量52人）</a></li>
-                    <li><a href="#" data-per="1">生科院102（容量69人）</a></li>
-                    <li><a href="#" data-per="1">生科院103（容量52人）</a></li>
-                    <li><a href="#" data-per="1">生科院106（容量75人）</a></li>
-                    <li><a href="#" data-per="1">生科院112（容量110人）</a></li>
-                    <li><a href="#" data-per="0">会议室213</a></li>
-                    <li><a href="#" data-per="0">报告厅119</a></li>
+                    <li><a href="#" data-per="1">1</a></li>
+                    <li><a href="#" data-per="1">2</a></li>
+                    <li><a href="#" data-per="1">3</a></li>
+                    <li><a href="#" data-per="1">4</a></li>
+                    <li><a href="#" data-per="1">5</a></li>
+                    <li><a href="#" data-per="0">6</a></li>
+                    <li><a href="#" data-per="0">7</a></li>
                 </ul>
             </div>
             <!-- week -->
@@ -435,7 +435,9 @@ $_SESSION['room_id']=1;
                     <h4 class="modal-title" id="exampleModalLabel">NewMessage</h4>
                 </div>
                 <div class="modal-body">
-                    yes
+                    <form class="form">
+                        <textarea class="form-control reason" rows="" cols=""></textarea>
+                    </form>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-default Close" data-dismiss="modal">Close</button>
@@ -491,17 +493,26 @@ $_SESSION['room_id']=1;
                 // Send Message
                 $.post("ss.php",
                     {
-                        content:$($itself).attr("class")
+                        reason: $(".reason").val(),
+                        hours: num,
+                        room: $(".list").text()
                     },
                     function(data,status){
                         alert("数据: \n" + data + "\n状态: " + status);
-                });
+                        $(".add").text($itself.attr("class")+" "+num+"个");
+                    });
                 // change ClassName
-                $(".add").text($itself.attr("class")+" "+num+"个").html();
+                // $(".add").text($itself.attr("class")+" "+num+"个");
                 $(".add").addClass("added");
                 $(".added").removeClass("add");
                 // close itself
                 $(".close").trigger("click");
+            })
+            $("li a").click(function(){
+                var str = $(this).text();
+                $(".list").html(str);
+                // ajax从数据库中读取数据
+                // code...
             })
 
             // read data from database
