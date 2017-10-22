@@ -458,6 +458,7 @@ $_SESSION['room_id']=1;
             var tbody; //从数据库查询添加的table所属的tbody
             var tr; //定位的tr
             var flag=false;//用来判断是否是点击tr
+            var content='';//用来记录方块里面的string
             var $itself;
             var $div = $('<div class="add"></div>');
             $(".active").mousedown(function(){
@@ -498,13 +499,14 @@ $_SESSION['room_id']=1;
                         room: $(".list").text()
                     },
                     function(data,status){
+                        content = data.toString();
                         alert("数据: \n" + data + "\n状态: " + status);
-                        $(".add").text($itself.attr("class")+" "+num+"个");
                     });
                 // change ClassName
-                // $(".add").text($itself.attr("class")+" "+num+"个");
+                $(".add").text(content);
                 $(".add").addClass("added");
                 $(".added").removeClass("add");
+
                 // close itself
                 $(".close").trigger("click");
             })
