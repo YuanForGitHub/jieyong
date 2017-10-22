@@ -1,6 +1,11 @@
 <?php
 
-//登录验证代码
+session_start();
+
+$_SESSION['user']='root';
+$_SESSION['room']='403';
+$_SESSION['user_id']=1;
+$_SESSION['room_id']=1;
 
 ?>
 
@@ -486,7 +491,6 @@
                 // Send Message
                 $.post("ss.php",
                     {
-                        name:"菜鸟教程",
                         content:$($itself).attr("class")
                     },
                     function(data,status){
@@ -500,8 +504,8 @@
                 $(".close").trigger("click");
             })
 
-            // 从数据库读取数据复原
-            tbody = $(".2017-10-21").children();
+            // read data from database
+            tbody = $(".2017-10-26").children();
             tr = tbody.children();
             pos = tr.eq(2).position();
             $div.text('yes');
@@ -509,9 +513,6 @@
             $(".add").css({"left":pos.left, "top":pos.top, "width": width, "height":parseInt(height)*3+"px"});
             $(".add").addClass("added");
             $(".added").removeClass("add");
-
-            //模态框
-            $("#myModal").on('shown')
         })
     </script>
 </body>

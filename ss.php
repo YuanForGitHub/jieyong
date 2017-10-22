@@ -1,11 +1,13 @@
 <?php
 
-// 登录验证
+// sign in
+session_start();
 
-if(isset($_POST['content'])){
-    echo $_POST['content'];
+if(!isset($_POST['room'])){
+    return false;
 }
-else{
-    echo "none";
-}
+
+echo $_SESSION['user'].$_SESSION['room_id'];
+echo 
+
 ?>
