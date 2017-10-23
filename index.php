@@ -6,6 +6,11 @@ $_SESSION['room']='403';
 $_SESSION['user_id']=1;
 $_SESSION['room_id']=1;
 
+$user = $_SESSION['user'];
+$user_id = $_SESSION['user_id'] ;
+$room = $_SESSION['room'];
+$room_id = $_SESSION['room_id'];
+
 ?>
 
 <!DOCTYPE html>
@@ -457,7 +462,6 @@ $_SESSION['room_id']=1;
             var tbody; //从数据库查询添加的table所属的tbody
             var tr; //定位的tr
             var flag=false;//用来判断是否是点击tr
-            var data;//承载json字符串
             var $itself;
             var $div = $('<div class="add"></div>');
             $(".active").mousedown(function(){
@@ -492,7 +496,7 @@ $_SESSION['room_id']=1;
             $(".send").click(function(){
                 // Send Message
                 var data;
-                $.post("ss.php",
+                $.post("save.php",
                     {
                         reason: $(".reason").val(),
                         hours: num,
@@ -508,20 +512,13 @@ $_SESSION['room_id']=1;
                             // change ClassName
                             $(".add").html(content);
                             $(".add").addClass("added");
+                            $(".add").addClass("mine");
                             $(".added").removeClass("add");
 
                             // close itself
                             $(".close").trigger("click");
                         }
-                        });
-                // change ClassName
-                // var str = JSON.parse(data);
-                // $(".add").text(typeof(str));
-                // $(".add").addClass("added");
-                // $(".added").removeClass("add");
-
-                // close itself
-                // $(".close").trigger("click");
+                    });
             })
             $("li a").click(function(){
                 var str = $(this).text()+'<span class="caret"></span>';
