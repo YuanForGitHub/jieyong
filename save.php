@@ -13,7 +13,8 @@ $data = array(
     "user_id" => $_SESSION['user_id'],
     "room_id" => $_SESSION['room_id'],
     "hours" => $_POST['hours'],
-    "reason" => $_POST['reason']
+    "reason" => $_POST['reason'],
+    "date" => $_POST['date']
 );
 
 // 存入数据库

@@ -458,7 +458,7 @@ $room_id = $_SESSION['room_id'];
             var width = $("td").css("width");
             var height = $("td").css("height");
             var pos;//被点击的单元格位置
-            var parent;//被点击的单元格父元素(array)
+            var $parent;//被点击的单元格父元素(array)
             var tbody; //从数据库查询添加的table所属的tbody
             var tr; //定位的tr
             var flag=false;//用来判断是否是点击tr
@@ -477,6 +477,7 @@ $room_id = $_SESSION['room_id'];
                 })
 
                 $itself = $(this);
+                $parent = $(this).parent().parent();//找到table
                 flag = true;
             })
             $(document).mouseup(function(){
@@ -500,11 +501,12 @@ $room_id = $_SESSION['room_id'];
                     {
                         reason: $(".reason").val(),
                         hours: num,
-                        room: $(".list").text()
+                        room: $(".list").text(),
+                        date: $parent.attr("class")
                     },
                     function(data,status){
                         if(status === 'success'){
-                            alert("预约成功！");
+                            alert("预约成功！"+$parent.attr("class"));
 
                             var str = JSON.parse(data);
                             var content = "借用人:"+str.user+"<br>"+"借用场地:"+str.room+"<br>"+"借用时间:"+str.hours+"个小时"+"<br>";
