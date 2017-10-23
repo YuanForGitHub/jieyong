@@ -457,7 +457,7 @@ $_SESSION['room_id']=1;
             var tbody; //从数据库查询添加的table所属的tbody
             var tr; //定位的tr
             var flag=false;//用来判断是否是点击tr
-            var content='';//用来记录方块里面的string
+            var data;//承载json字符串
             var $itself;
             var $div = $('<div class="add"></div>');
             $(".active").mousedown(function(){
@@ -491,6 +491,7 @@ $_SESSION['room_id']=1;
             })
             $(".send").click(function(){
                 // Send Message
+                var data;
                 $.post("ss.php",
                     {
                         reason: $(".reason").val(),
@@ -498,22 +499,41 @@ $_SESSION['room_id']=1;
                         room: $(".list").text()
                     },
                     function(data,status){
-                        alert("数据: \n" + data + "\n状态: " + status);
-                    });
+                        if(status === 'success'){
+                            alert("预约成功！");
+
+                            var str = JSON.parse(data);
+                            var content = "借用人:"+str.user+"<br>"+"借用场地:"+str.room+"<br>"+"借用时间:"+str.hours+"个小时"+"<br>";
+
+                            // change ClassName
+                            $(".add").html(content);
+                            $(".add").addClass("added");
+                            $(".added").removeClass("add");
+
+                            // close itself
+                            $(".close").trigger("click");
+                        }
+                        });
                 // change ClassName
-                content = "使用者:"+user+"<br>"+"借用场地："+room+"<br>"+"借用原因:"+reason+"<br>"+"借用时长:";
-                $(".add").val(content);
-                $(".add").addClass("added");
-                $(".added").removeClass("add");
+                // var str = JSON.parse(data);
+                // $(".add").text(typeof(str));
+                // $(".add").addClass("added");
+                // $(".added").removeClass("add");
 
                 // close itself
-                $(".close").trigger("click");
+                // $(".close").trigger("click");
             })
             $("li a").click(function(){
-                var str = $(this).text();
+                var str = $(this).text()+'<span class="caret"></span>';
                 $(".list").html(str);
                 // ajax从数据库中读取数据
-                // code...
+                $.post("changeRoom.php",
+                    {
+                        room: $(".list").text()
+                    },
+                    function(data, status){
+                        // ...
+                    });
             })
 
             // read data from database
