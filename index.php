@@ -174,7 +174,6 @@ $room_id = $_SESSION['room_id'];
             </table>
             <table class=<?php echo date("Y-m-d D"); ?>>
                 <tr><td><?php echo date("Y-m-d D"); ?></td></tr>
-                <tr class="0 active"><td></td></tr>
                 <tr class="1 active"><td></td></tr>
                 <tr class="2 active"><td></td></tr>
                 <tr class="3 active"><td></td></tr>
@@ -203,13 +202,13 @@ $room_id = $_SESSION['room_id'];
                 <tr class="26 active"><td></td></tr>
                 <tr class="27 active"><td></td></tr>
                 <tr class="28 active"><td></td></tr>
-                <tr class="39 active"><td></td></tr>
+                <tr class="29 active"><td></td></tr>
                 <tr class="30 active"><td></td></tr>
                 <tr class="31 active"><td></td></tr>
+                <tr class="32 active"><td></td></tr>
             </table>
             <table class=<?php echo date("Y-m-d D", strtotime("+1 day")); ?>>
                 <tr><td><?php echo date("Y-m-d D", strtotime("+1 day")); ?></td></tr>
-                <tr class="0 active"><td></td></tr>
                 <tr class="1 active"><td></td></tr>
                 <tr class="2 active"><td></td></tr>
                 <tr class="3 active"><td></td></tr>
@@ -238,13 +237,13 @@ $room_id = $_SESSION['room_id'];
                 <tr class="26 active"><td></td></tr>
                 <tr class="27 active"><td></td></tr>
                 <tr class="28 active"><td></td></tr>
-                <tr class="39 active"><td></td></tr>
+                <tr class="29 active"><td></td></tr>
                 <tr class="30 active"><td></td></tr>
                 <tr class="31 active"><td></td></tr>
+                <tr class="32 active"><td></td></tr>
             </table>
             <table class=<?php echo date("Y-m-d D", strtotime("+2 day")); ?>>
                 <tr><td><?php echo date("Y-m-d D", strtotime("+2 day")); ?></td></tr>
-                <tr class="0 active"><td></td></tr>
                 <tr class="1 active"><td></td></tr>
                 <tr class="2 active"><td></td></tr>
                 <tr class="3 active"><td></td></tr>
@@ -273,13 +272,13 @@ $room_id = $_SESSION['room_id'];
                 <tr class="26 active"><td></td></tr>
                 <tr class="27 active"><td></td></tr>
                 <tr class="28 active"><td></td></tr>
-                <tr class="39 active"><td></td></tr>
+                <tr class="29 active"><td></td></tr>
                 <tr class="30 active"><td></td></tr>
                 <tr class="31 active"><td></td></tr>
+                <tr class="32 active"><td></td></tr>
             </table>
             <table class=<?php echo date("Y-m-d D", strtotime("+3 day")); ?>>
                 <tr><td><?php echo date("Y-m-d D", strtotime("+3 day")); ?></td></tr>
-                <tr class="0 active"><td></td></tr>
                 <tr class="1 active"><td></td></tr>
                 <tr class="2 active"><td></td></tr>
                 <tr class="3 active"><td></td></tr>
@@ -308,13 +307,13 @@ $room_id = $_SESSION['room_id'];
                 <tr class="26 active"><td></td></tr>
                 <tr class="27 active"><td></td></tr>
                 <tr class="28 active"><td></td></tr>
-                <tr class="39 active"><td></td></tr>
+                <tr class="29 active"><td></td></tr>
                 <tr class="30 active"><td></td></tr>
                 <tr class="31 active"><td></td></tr>
+                <tr class="32 active"><td></td></tr>
             </table>
             <table class=<?php echo date("Y-m-d D", strtotime("+4 day")); ?>>
                 <tr><td><?php echo date("Y-m-d D", strtotime("+4 day")); ?></td></tr>
-                <tr class="0 active"><td></td></tr>
                 <tr class="1 active"><td></td></tr>
                 <tr class="2 active"><td></td></tr>
                 <tr class="3 active"><td></td></tr>
@@ -343,13 +342,13 @@ $room_id = $_SESSION['room_id'];
                 <tr class="26 active"><td></td></tr>
                 <tr class="27 active"><td></td></tr>
                 <tr class="28 active"><td></td></tr>
-                <tr class="39 active"><td></td></tr>
+                <tr class="29 active"><td></td></tr>
                 <tr class="30 active"><td></td></tr>
                 <tr class="31 active"><td></td></tr>
+                <tr class="32 active"><td></td></tr>
             </table>
             <table class=<?php echo date("Y-m-d D", strtotime("+5 day")); ?>>
                 <tr><td><?php echo date("Y-m-d D", strtotime("+5 day")); ?></td></tr>
-                <tr class="0 active"><td></td></tr>
                 <tr class="1 active"><td></td></tr>
                 <tr class="2 active"><td></td></tr>
                 <tr class="3 active"><td></td></tr>
@@ -378,13 +377,13 @@ $room_id = $_SESSION['room_id'];
                 <tr class="26 active"><td></td></tr>
                 <tr class="27 active"><td></td></tr>
                 <tr class="28 active"><td></td></tr>
-                <tr class="39 active"><td></td></tr>
+                <tr class="29 active"><td></td></tr>
                 <tr class="30 active"><td></td></tr>
                 <tr class="31 active"><td></td></tr>
+                <tr class="32 active"><td></td></tr>
             </table>
             <table class=<?php echo date("Y-m-d D", strtotime("+6 day")); ?>>
                 <tr><td><?php echo date("Y-m-d D", strtotime("+6 day")); ?></td></tr>
-                <tr class="0 active"><td></td></tr>
                 <tr class="1 active"><td></td></tr>
                 <tr class="2 active"><td></td></tr>
                 <tr class="3 active"><td></td></tr>
@@ -413,9 +412,10 @@ $room_id = $_SESSION['room_id'];
                 <tr class="26 active"><td></td></tr>
                 <tr class="27 active"><td></td></tr>
                 <tr class="28 active"><td></td></tr>
-                <tr class="39 active"><td></td></tr>
+                <tr class="29 active"><td></td></tr>
                 <tr class="30 active"><td></td></tr>
                 <tr class="31 active"><td></td></tr>
+                <tr class="32 active"><td></td></tr>
             </table>
         </div>
     </div>
@@ -535,31 +535,23 @@ $room_id = $_SESSION['room_id'];
                     },
                     function(data, status){
                         var str = JSON.parse(data);
-                        var content = "借用人:"+str.user+"<br>"+"借用场地:"+str.room+"<br>"+"借用时间:"+str.hours+"个小时"+"<br>"+str.start;
-                        tbody = $(str.date).children();
-                        tr = tbody.children();
-                        pos = tr.eq(str.start).position();
-                        $div.html(content);
-                        $("body").append($div);
-                        $(".add").css({"left":pos.left, "top":pos.top, "width": width, "height":parseInt(height)*3+"px"});
-                        $(".add").addClass("added");
-                        $(".added").removeClass("add");
+                        var $i=0;
+                        var content;
+                        while($i<str.length && status==='success'){
+                            content = "借用人:"+str[$i].user+"<br>"+"借用场地:"+str[$i].room+"<br>"+"借用时间:"+str[$i].hours+"个小时"+"<br>"+str[$i].start;
+                            tbody = $("."+str[$i].day).children();
+                            tr = tbody.children();
+                            pos = tr.eq(str[$i].start).position();
+                            $div.html(content);
+                            $("body").append($div);
+                            $(".add").css({"left":pos.left, "top":pos.top, "width": width, "height":parseInt(height)*str[$i].hours+"px"});
+                            $(".add").addClass("added");
+                            $(".added").removeClass("add");
+                            alert(pos.top+tr.eq(str[$i].start).position()+$i);
+                            $i++;
+                        }
                     });
             })
-
-            // read data from database
-            // tbody = $(".2017-10-26").children();
-            // tr = tbody.children();
-            // pos = tr.eq(2).position();
-            // $div.text('yes');
-            // $("body").append($div);
-            // $(".add").css({"left":pos.left, "top":pos.top, "width": width, "height":parseInt(height)*3+"px"});
-            // $(".add").addClass("added");
-            // $(".added").removeClass("add");
-
-            // tbody = $(".2017-10-26").children();
-            // tr = tbody.children();
-            // pos = tr.eq(str.)
         })
     </script>
 </body>
