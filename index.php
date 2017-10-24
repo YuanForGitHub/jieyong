@@ -518,6 +518,7 @@ $room_id = $_SESSION['room_id'];
                             $(".add").html(content);
                             $(".add").addClass("added");
                             $(".add").addClass("mine");
+                            // $(".add").attr("id", str.id);
                             $(".added").removeClass("add");
 
                             // close itself
