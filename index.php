@@ -465,7 +465,7 @@ $room_id = $_SESSION['room_id'];
             var start;//开始的位置
             var data; //ajax传递来的数值
             var $itself;
-            var $div = $('<div class="add"></div>');
+            var $div;// 创建$('<div class="add"></div>')
             $(".active").mousedown(function(){
                 $("body").append('<div class="add">拖住选择</div>');
                 
@@ -526,8 +526,10 @@ $room_id = $_SESSION['room_id'];
                     });
             })
             $("li a").click(function(){
-                var str = $(this).text()+'<span class="caret"></span>';
-                $(".list").html(str);
+                var btn_content = $(this).text()+'<span class="caret"></span>';
+                $(".list").html(btn_content);
+                // 移除原来的数据
+                $(".added").remove();
                 // ajax从数据库中读取数据
                 $.post("changeRoom.php",
                     {
@@ -539,15 +541,16 @@ $room_id = $_SESSION['room_id'];
                         var content;
                         while($i<str.length && status==='success'){
                             content = "借用人:"+str[$i].user+"<br>"+"借用场地:"+str[$i].room+"<br>"+"借用时间:"+str[$i].hours+"个小时"+"<br>"+str[$i].start;
+                            var check = $("html").find("."+str[$i].day);
                             tbody = $("."+str[$i].day).children();
                             tr = tbody.children();
                             pos = tr.eq(str[$i].start).position();
+                            $div = $('<div class="add"></div>');//重置div
                             $div.html(content);
                             $("body").append($div);
                             $(".add").css({"left":pos.left, "top":pos.top, "width": width, "height":parseInt(height)*str[$i].hours+"px"});
                             $(".add").addClass("added");
                             $(".added").removeClass("add");
-                            alert(pos.top+tr.eq(str[$i].start).position()+$i);
                             $i++;
                         }
                     });
