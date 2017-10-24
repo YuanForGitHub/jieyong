@@ -101,15 +101,15 @@ $room_id = $_SESSION['room_id'];
                 <h4>课室：</h4>
             </div>
             <div class="col-xs-4 dropdown" style="padding-left: 0%;">
-                <button type="button" class="btn btn-default dropdown-toggle list selected" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="width: 90%;">1<span class="caret"></span></button>
+                <button type="button" class="btn btn-default dropdown-toggle list selected" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="width: 90%;">请选择课室<span class="caret"></span></button>
                 <ul class="dropdown-menu" aria-labelledby="dLabel">
-                    <li><a href="#" data-per="1">1</a></li>
-                    <li><a href="#" data-per="1">2</a></li>
-                    <li><a href="#" data-per="1">3</a></li>
-                    <li><a href="#" data-per="1">4</a></li>
-                    <li><a href="#" data-per="1">5</a></li>
-                    <li><a href="#" data-per="0">6</a></li>
-                    <li><a href="#" data-per="0">7</a></li>
+                    <li><a href="#" data-per="1">教四101</a></li>
+                    <li><a href="#" data-per="1">教四202</a></li>
+                    <li><a href="#" data-per="1">教四303</a></li>
+                    <li><a href="#" data-per="1">教四404</a></li>
+                    <li><a href="#" data-per="1">教四505</a></li>
+                    <li><a href="#" data-per="0">教四606</a></li>
+                    <li><a href="#" data-per="0">教四707</a></li>
                 </ul>
             </div>
             <!-- week -->
@@ -512,7 +512,7 @@ $room_id = $_SESSION['room_id'];
                             alert("预约成功！"+$parent.attr("class")+$itself.attr("class"));
 
                             var str = JSON.parse(data);
-                            var content = "借用人:"+str.user+"<br>"+"借用场地:"+str.room+"<br>"+"借用时间:"+str.hours+"个小时"+"<br>"+str.start;
+                            var content = "借用人:"+str.user+"<br>"+"借用场地:"+str.room+"<br>"+"借用时间:"+str.hours+"个小时"+"<br>"+"借用理由:"+str.reason;
 
                             // change ClassName
                             $(".add").html(content);
@@ -540,8 +540,12 @@ $room_id = $_SESSION['room_id'];
                         var $i=0;
                         var content;
                         while($i<str.length && status==='success'){
-                            content = "借用人:"+str[$i].user+"<br>"+"借用场地:"+str[$i].room+"<br>"+"借用时间:"+str[$i].hours+"个小时"+"<br>"+str[$i].start;
+                            content = "借用人:"+str[$i].user+"<br>"+"借用场地:"+str[$i].room+"<br>"+"借用时间:"+str[$i].hours+"个小时"+"<br>"+"借用理由:"+str[$i].reason;
                             var check = $("html").find("."+str[$i].day);
+                            if(check.length<1){
+                                $i++;
+                                continue; // 对象长度小于1，表示没有数据
+                            }
                             tbody = $("."+str[$i].day).children();
                             tr = tbody.children();
                             pos = tr.eq(str[$i].start).position();
@@ -554,6 +558,15 @@ $room_id = $_SESSION['room_id'];
                             $i++;
                         }
                     });
+            })
+            $(document).on("click", ".added", function(){
+                var s = confirm("yes");
+                if(s===true){
+                    
+                }
+                else{
+                    alert('no');
+                }
             })
         })
     </script>
