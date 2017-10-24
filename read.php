@@ -5,6 +5,7 @@ include 'conn.php';
 // 登录验证
 // ...
 
-$data
+$sql = "SELECT * FROM rend";
+$result = mysqli_query($conn, $sql);
 
 ?>

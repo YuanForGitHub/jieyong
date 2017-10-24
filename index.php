@@ -462,6 +462,8 @@ $room_id = $_SESSION['room_id'];
             var tbody; //从数据库查询添加的table所属的tbody
             var tr; //定位的tr
             var flag=false;//用来判断是否是点击tr
+            var start;//开始的位置
+            var data; //ajax传递来的数值
             var $itself;
             var $div = $('<div class="add"></div>');
             $(".active").mousedown(function(){
@@ -502,14 +504,15 @@ $room_id = $_SESSION['room_id'];
                         reason: $(".reason").val(),
                         hours: num,
                         room: $(".list").text(),
-                        date: $parent.attr("class")
+                        day: $parent.attr("class"),
+                        start: parseInt($itself.attr("class"))
                     },
                     function(data,status){
                         if(status === 'success'){
-                            alert("预约成功！"+$parent.attr("class"));
+                            alert("预约成功！"+$parent.attr("class")+$itself.attr("class"));
 
                             var str = JSON.parse(data);
-                            var content = "借用人:"+str.user+"<br>"+"借用场地:"+str.room+"<br>"+"借用时间:"+str.hours+"个小时"+"<br>";
+                            var content = "借用人:"+str.user+"<br>"+"借用场地:"+str.room+"<br>"+"借用时间:"+str.hours+"个小时"+"<br>"+str.start;
 
                             // change ClassName
                             $(".add").html(content);
@@ -531,19 +534,32 @@ $room_id = $_SESSION['room_id'];
                         room: $(".list").text()
                     },
                     function(data, status){
-                        // ...
+                        var str = JSON.parse(data);
+                        var content = "借用人:"+str.user+"<br>"+"借用场地:"+str.room+"<br>"+"借用时间:"+str.hours+"个小时"+"<br>"+str.start;
+                        tbody = $(str.date).children();
+                        tr = tbody.children();
+                        pos = tr.eq(str.start).position();
+                        $div.html(content);
+                        $("body").append($div);
+                        $(".add").css({"left":pos.left, "top":pos.top, "width": width, "height":parseInt(height)*3+"px"});
+                        $(".add").addClass("added");
+                        $(".added").removeClass("add");
                     });
             })
 
             // read data from database
-            tbody = $(".2017-10-26").children();
-            tr = tbody.children();
-            pos = tr.eq(2).position();
-            $div.text('yes');
-            $("body").append($div);
-            $(".add").css({"left":pos.left, "top":pos.top, "width": width, "height":parseInt(height)*3+"px"});
-            $(".add").addClass("added");
-            $(".added").removeClass("add");
+            // tbody = $(".2017-10-26").children();
+            // tr = tbody.children();
+            // pos = tr.eq(2).position();
+            // $div.text('yes');
+            // $("body").append($div);
+            // $(".add").css({"left":pos.left, "top":pos.top, "width": width, "height":parseInt(height)*3+"px"});
+            // $(".add").addClass("added");
+            // $(".added").removeClass("add");
+
+            // tbody = $(".2017-10-26").children();
+            // tr = tbody.children();
+            // pos = tr.eq(str.)
         })
     </script>
 </body>
