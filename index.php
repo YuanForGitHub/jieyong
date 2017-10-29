@@ -499,13 +499,15 @@ $room_id = $_SESSION['room_id'];
             $(".send").click(function(){
                 // Send Message
                 var data;
+                var delete = $itself.attr("class")+"-"+
                 $.post("save.php",
                     {
                         reason: $(".reason").val(),
                         hours: num,
                         room: $(".list").text(),
                         day: $parent.attr("class"),
-                        start: parseInt($itself.attr("class"))
+                        start: parseInt($itself.attr("class")),
+                        delte: $()
                     },
                     function(data,status){
                         if(status === 'success'){
@@ -561,12 +563,13 @@ $room_id = $_SESSION['room_id'];
                     });
             })
             $(document).on("click", ".added", function(){
-                var s = confirm("yes");
+                var s = confirm("确定要删除这个预定？");
                 if(s===true){
-                    
-                }
-                else{
-                    alert('no');
+                    $.post('delete.php',
+                    {
+                        del_id: 
+                    })
+                    alert('删除成功！');
                 }
             })
         })
