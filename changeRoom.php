@@ -21,6 +21,7 @@ while($row = mysqli_fetch_array($result)){
     $data[$i]['day'] = $row['day'];
     $data[$i]['start'] = $row['start'];
     $data[$i]['pass'] = $row['pass'];
+    $data[$i]['del'] = $row['del'];
     $i++;
 }
 

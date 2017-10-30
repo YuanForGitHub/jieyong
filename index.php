@@ -464,6 +464,7 @@ $room_id = $_SESSION['room_id'];
             var flag=false;//用来判断是否是点击tr
             var start;//开始的位置
             var data; //ajax传递来的数值
+            var del; //delete数据属性，因为delete是保留字，所以只能用del当变量
             var $itself;
             var $div;// 创建$('<div class="add"></div>')
             $(".active").mousedown(function(){
@@ -499,7 +500,7 @@ $room_id = $_SESSION['room_id'];
             $(".send").click(function(){
                 // Send Message
                 var data;
-                var delete = $itself.attr("class")+"-"+
+                del = $itself.attr("class")+'-'+$parent.attr("class");
                 $.post("save.php",
                     {
                         reason: $(".reason").val(),
@@ -507,7 +508,7 @@ $room_id = $_SESSION['room_id'];
                         room: $(".list").text(),
                         day: $parent.attr("class"),
                         start: parseInt($itself.attr("class")),
-                        delte: $()
+                        del: del
                     },
                     function(data,status){
                         if(status === 'success'){
@@ -519,8 +520,8 @@ $room_id = $_SESSION['room_id'];
                             // change ClassName
                             $(".add").html(content);
                             $(".add").addClass("added");
+                            $(".add").attr("del", str.del);
                             $(".add").addClass("mine");
-                            // $(".add").attr("id", str.id);
                             $(".added").removeClass("add");
 
                             // close itself
@@ -557,19 +558,19 @@ $room_id = $_SESSION['room_id'];
                             $("body").append($div);
                             $(".add").css({"left":pos.left, "top":pos.top, "width": width, "height":parseInt(height)*str[$i].hours+"px"});
                             $(".add").addClass("added");
+                            $(".add").attr("del", str[$i].del)
                             $(".added").removeClass("add");
                             $i++;
                         }
                     });
             })
             $(document).on("click", ".added", function(){
-                var s = confirm("确定要删除这个预定？");
+                var s = confirm("确定删除?");
                 if(s===true){
-                    $.post('delete.php',
-                    {
-                        del_id: 
-                    })
-                    alert('删除成功！');
+                    alert($(this).attr("del"));
+                }
+                else{
+                    alert('no');
                 }
             })
         })

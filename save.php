@@ -15,11 +15,13 @@ $data = array(
     "hours" => $_POST['hours'],
     "reason" => $_POST['reason'],
     "day" => $_POST['day'],
-    "start" => $_POST['start']
+    "start" => $_POST['start'],
+    "del" => $_POST['del']
+    // "del" => "ceshi"
 );
 
 // 存入数据库
-$sql = "INSERT INTO rend(user, user_id, room, room_id, hours, reason, day, start) VALUES(
+$sql = "INSERT INTO rend(user, user_id, room, room_id, hours, reason, day, start, del) VALUES(
     '{$data['user']}', 
     {$data['user_id']}, 
     '{$data['room']}', 
@@ -27,7 +29,8 @@ $sql = "INSERT INTO rend(user, user_id, room, room_id, hours, reason, day, start
     {$data['hours']}, 
     '{$data['reason']}',
     '{$data['day']}',
-    {$data['start']}
+    {$data['start']},
+    '{$data['del']}'
     )";
 $result = mysqli_query($conn, $sql);
 
