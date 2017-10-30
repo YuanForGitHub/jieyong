@@ -75,6 +75,9 @@ $room_id = $_SESSION['room_id'];
         .added:hover{
             overflow: visible;
         }
+        .mine{
+            background-color: blue;
+        }
     </style>
     <title>Document</title>
 </head>
@@ -467,6 +470,7 @@ $room_id = $_SESSION['room_id'];
             var del; //delete数据属性，因为delete是保留字，所以只能用del当变量
             var $itself;
             var $div;// 创建$('<div class="add"></div>')
+            var user = "<?php echo $_SESSION['user']; ?>"; //用来判断是否是自己的预定
             $(".active").mousedown(function(){
                 $("body").append('<div class="add">拖住选择</div>');
                 
@@ -558,7 +562,7 @@ $room_id = $_SESSION['room_id'];
                             $("body").append($div);
                             $(".add").css({"left":pos.left, "top":pos.top, "width": width, "height":parseInt(height)*str[$i].hours+"px"});
                             $(".add").addClass("added");
-                            $(".add").attr("del", str[$i].del)
+                            $(".add").attr("del", str[$i].del);
                             $(".added").removeClass("add");
                             $i++;
                         }
@@ -567,10 +571,15 @@ $room_id = $_SESSION['room_id'];
             $(document).on("click", ".added", function(){
                 var s = confirm("确定删除?");
                 if(s===true){
-                    alert($(this).attr("del"));
-                }
-                else{
-                    alert('no');
+                    del = $(this).attr("del");
+                    $.post("delete.php",
+                    {
+                        del: del
+                    },
+                    function(){
+                        $(this).remove();
+                        alert("删除成功！");
+                    })
                 }
             })
         })

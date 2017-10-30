@@ -1,7 +1,6 @@
 <?php
 include 'conn.php';
 // sign in
-session_start();
 
 if(!isset($_POST['room'])){
     return false;

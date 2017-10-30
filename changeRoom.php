@@ -6,8 +6,9 @@ if(!isset($_POST['room'])){
     return false;
 }
 $_SESSION['room'] = $_POST['room'];
+$room = $_POST['room'];
 
-$sql = "SELECT * FROM rend";
+$sql = "SELECT * FROM rend WHERE room='{$room}'";
 $result = mysqli_query($conn, $sql);
 $i = 0;
 while($row = mysqli_fetch_array($result)){

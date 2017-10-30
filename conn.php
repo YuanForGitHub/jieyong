@@ -8,4 +8,5 @@ $dbname = "test";
 $conn = new mysqli($serve, $user, $psw, $dbname);
 mysqli_set_charset($conn, "utf8");
 
+session_start();
 ?>
