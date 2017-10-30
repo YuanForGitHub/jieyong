@@ -59,16 +59,16 @@ $room_id = $_SESSION['room_id'];
             left: -2%;
         }
         .add{
-            opacity: 0.7;
+            opacity: 0.6;
             overflow: hidden;
-            background-color: yellow;
+            background-color: #FDCAD3;
             position: absolute;
             z-index: +3;
         }
         .added{
-            opacity: 0.7;
+            opacity: 0.6;
             overflow: hidden;
-            background-color: yellow;
+            background-color: #FDCAD3;
             position: absolute;
             z-index: +3;
         }
@@ -76,7 +76,7 @@ $room_id = $_SESSION['room_id'];
             overflow: visible;
         }
         .mine{
-            background-color: blue;
+            background-color: yellow;
         }
     </style>
     <title>Document</title>
@@ -563,12 +563,13 @@ $room_id = $_SESSION['room_id'];
                             $(".add").css({"left":pos.left, "top":pos.top, "width": width, "height":parseInt(height)*str[$i].hours+"px"});
                             $(".add").addClass("added");
                             $(".add").attr("del", str[$i].del);
+                            if(user==str[$i].user) $(".add").addClass("mine");
                             $(".added").removeClass("add");
                             $i++;
                         }
                     });
             })
-            $(document).on("click", ".added", function(){
+            $(document).on("click", ".mine", function(){
                 var s = confirm("确定删除?");
                 if(s===true){
                     del = $(this).attr("del");
