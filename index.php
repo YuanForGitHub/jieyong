@@ -576,11 +576,23 @@ $room_id = $_SESSION['room_id'];
                     $.post("delete.php",
                     {
                         del: del
-                    },
-                    function(){
-                        $(this).remove();
-                        alert("删除成功！");
                     })
+                    $(this).remove();
+                    alert("删除成功！");
+                }
+            })
+            $(document).on("click", ".added", function(){
+                if(user=='root'){
+                    var s = confirm("确定删除?");
+                    if(s===true){
+                    del = $(this).attr("del");
+                    $.post("delete.php",
+                    {
+                        del: del
+                    })
+                    $(this).remove();
+                    alert("删除成功！");
+                }
                 }
             })
         })
