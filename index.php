@@ -570,6 +570,7 @@ $room_id = $_SESSION['room_id'];
                     });
             })
             $(document).on("click", ".mine", function(){
+                if(user=='root') return false; //防止管理员登录删除自己的时候弹出两次
                 var s = confirm("确定删除?");
                 if(s===true){
                     del = $(this).attr("del");
