@@ -1,6 +1,5 @@
 <?php
-
-session_start();
+include 'conn.php';
 $_SESSION['user'] = 'root';
 $_SESSION['room']='403';
 $_SESSION['user_id']=1;
