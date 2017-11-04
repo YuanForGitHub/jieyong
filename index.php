@@ -26,10 +26,18 @@ $room_id = $_SESSION['room_id'];
         div {
             border: 1px solid red;
         }
-
+    
+        .header{
+            background-color: #89FBF4;
+        }
         .header p {
+            font-size: 1.2em;
+            color: gray;
             margin-left: 90%;
             border: 1px solid red;
+        }
+        .time{
+            color: #FFCC00;
         }
         .body{
             border: 1px solid purple;
@@ -39,17 +47,23 @@ $room_id = $_SESSION['room_id'];
             width: 12.5%;
         }
         table tr{
-            border: 1px solid green;
+            border: 1px solid #DDD;
             height: 30px;
+        }
+        table td{
+            padding-left: 10%;
         }
         table>tr>td {
             background-color: yellow;
         }
         .nav-left{
             border: 1px solid red;
+            border-radius: 0px 30px 10px 0px;
+            background-color: #FFFF99;
+            opacity: 0.8;
             position: fixed;
             width: 10%;
-            height: 30%;
+            height: 40%;
             left: -8%;
             top: 35%;
             transition: 1s;
@@ -58,14 +72,18 @@ $room_id = $_SESSION['room_id'];
             left: -2%;
         }
         .add{
-            opacity: 0.6;
+            font-size: 1.1em;
+            border-radius: 8px;
+            opacity: 0.8;
             overflow: hidden;
             background-color: #FDCAD3;
             position: absolute;
             z-index: +3;
         }
         .added{
-            opacity: 0.6;
+            font-size: 1.1em;
+            border-radius: 8px;
+            opacity: 0.8;
             overflow: hidden;
             background-color: #FDCAD3;
             position: absolute;
@@ -75,25 +93,41 @@ $room_id = $_SESSION['room_id'];
             overflow: visible;
         }
         .mine{
-            background-color: yellow;
+            background-color: #FDDA81;
+        }
+        .nav-content{
+            display: block;
+            width: 100%;
+            height: 33%;
+            padding-top: 28%;
+        }
+        .cover{
+            display: none;
+            position: fixed;
+            top: 0px;
+            left: 0px;
+            outline: 5000px solid rgba(0,0,0,0.3);
+            z-index: 10;
         }
     </style>
     <title>Document</title>
 </head>
 
 <body>
+    <div class="cover"></div>
+
     <div class="container">
         <!-- header -->
         <div id="header" class="header">
             <p>
-                <?php echo "yes";?>
+                <?php echo $user;?>
                 <span class="glyphicon glyphicon-user" aria-hidden="true"></span></p>
             <p>欢迎登录</p>
         </div>
         <!-- middle -->
-        <div class="row">
+        <div class="row" style="margin-top: 1%">
             <!-- time -->
-            <div class="col-xs-4">
+            <div class="col-xs-4 time">
                 <h4>
                     <?php echo date("Y-m-d");?>
                 </h4>
@@ -115,21 +149,16 @@ $room_id = $_SESSION['room_id'];
                 </ul>
             </div>
             <!-- week -->
-            <div class="wrap-btn col-xs-3">
+            <div class="wrap-btn col-xs-3 text-center">
                 <div class="btn-group" role="group" aria-label="...">
-                    <a id="left" href="index.php?action=left&class=生科院101（容量52人）&p=1">
-                        <button type="button" class="btn btn-default" style="width:30%;">
-                            <span class="" aria-hidden="true">上周</span>
+                    <a id="left" href="#">
+                        <button type="button" class="btn btn-info dayLight" style="width:47%;">
+                            <span class="" aria-hidden="true">白天模式</span>
                         </button>
                     </a>
-                    <a id="today" href="index.php?action=today&class=生科院101（容量52人）&p=1">
-                        <button type="button" class="btn btn-default" style="width:30%;">
-                            <span class="" aria-hidden="true">今周</span>
-                        </button>
-                    </a>
-                    <a id="right" href="index.php?action=right&class=生科院101（容量52人）&p=1">
-                        <button type="button" class="btn btn-default" style="width:30%;">
-                            <span class="" aria-hidden="true">下周</span>
+                    <a id="right" href="#">
+                        <button type="button" class="btn btn-primary nightLight" style="width:47%;">
+                            <span class="" aria-hidden="true">夜间模式</span>
                         </button>
                     </a>
                 </div>
@@ -424,9 +453,15 @@ $room_id = $_SESSION['room_id'];
 
     <!-- nav-left -->
     <div class="nav-left">
-        <p>one</p>
-        <p>two</p>
-        <p>three</p>
+        <div class="nav-content text-center" style="border-radius: 0px 30px 0px 0px">
+            <a href="loginOut.php">退出登录</a>
+        </div>
+        <div class="nav-content text-center">
+            <a href="pswChange.php">修改密码</a>
+        </div>
+        <div class="nav-content text-center" style="border-radius: 0px 0px 10px 0px">
+            <a href="friend.php">小幸运</a>
+        </div>
     </div>
 
     <!-- modal -->
@@ -594,6 +629,14 @@ $room_id = $_SESSION['room_id'];
                     alert("删除成功！");
                 }
                 }
+            })
+            $(document).on("click", ".dayLight", function(){
+                // $(".cover").css("display", "none");
+                $(".cover").hide();
+            })
+            $(document).on("click", ".nightLight", function(){
+                // $(".cover").css("display", "true");
+                $(".cover").show();
             })
         })
     </script>

@@ -58,6 +58,7 @@ function find($a){
     return $row['id'];
 }
 
+// 合并不同祖先
 function union($ancestor, $change){
     global $conn;
     
