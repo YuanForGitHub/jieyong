@@ -24,7 +24,7 @@ $room_id = $_SESSION['room_id'];
     <script src="js/bootstrap.min.js"></script>
     <style>
         div {
-            border: 1px solid red;
+            /* border: 1px solid red; */
         }
     
         .header{
@@ -34,7 +34,6 @@ $room_id = $_SESSION['room_id'];
             font-size: 1.2em;
             color: gray;
             margin-left: 90%;
-            border: 1px solid red;
         }
         .time{
             color: #FFCC00;
@@ -72,6 +71,7 @@ $room_id = $_SESSION['room_id'];
             left: -2%;
         }
         .add{
+            padding: 1%;
             font-size: 1.1em;
             border-radius: 8px;
             opacity: 0.8;
@@ -81,6 +81,7 @@ $room_id = $_SESSION['room_id'];
             z-index: +3;
         }
         .added{
+            padding: 1%;
             font-size: 1.1em;
             border-radius: 8px;
             opacity: 0.8;
@@ -167,7 +168,7 @@ $room_id = $_SESSION['room_id'];
         </div>
 
 
-        <div class="body">
+        <div class="body" style="margin-top: 1%">
             <table class="hours">
                 <tr><td></td></tr>
                 <tr><td>7:00</td></tr>
@@ -553,7 +554,7 @@ $room_id = $_SESSION['room_id'];
                             alert("预约成功！"+$parent.attr("class")+$itself.attr("class"));
 
                             var str = JSON.parse(data);
-                            var content = "借用人:"+str.user+"<br>"+"借用场地:"+str.room+"<br>"+"借用时间:"+str.hours+"个小时"+"<br>"+"借用理由:"+str.reason;
+                            var content = "理由:"+str.reason+"<br>"+"借用人:"+str.user+"<br>"+"场地:"+str.room+"<br>"+"时间:"+str.hours+"个小时";
 
                             // change ClassName
                             $(".add").html(content);
@@ -582,7 +583,7 @@ $room_id = $_SESSION['room_id'];
                         var $i=0;
                         var content;
                         while($i<str.length && status==='success'){
-                            content = "借用人:"+str[$i].user+"<br>"+"借用场地:"+str[$i].room+"<br>"+"借用时间:"+str[$i].hours+"个小时"+"<br>"+"借用理由:"+str[$i].reason;
+                            content = "理由:"+str[$i].reason+"<br>"+"借用人:"+str[$i].user+"<br>"+"场地:"+str[$i].room+"<br>"+"时间:"+str[$i].hours+"个小时";
                             var check = $("html").find("."+str[$i].day);
                             if(check.length<1){
                                 $i++;
