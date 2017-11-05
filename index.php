@@ -553,7 +553,7 @@ $room_id = $_SESSION['room_id'];
                             alert("预约成功！"+$parent.attr("class")+$itself.attr("class"));
 
                             var str = JSON.parse(data);
-                            var content = "理由:"+str.reason+"<br>"+"借用人:"+str.user+"<br>"+"场地:"+str.room+"<br>"+"时间:"+str.hours+"个小时";
+                            var content = "理由:"+str.reason+"<br>"+"借用人:"+str.user+"<br>"+"场地:"+str.room+"<br>"+"时间:"+str.hours/2+"个小时";
 
                             // change ClassName
                             $(".add").html(content);
@@ -582,7 +582,7 @@ $room_id = $_SESSION['room_id'];
                         var $i=0;
                         var content;
                         while($i<str.length && status==='success'){
-                            content = "理由:"+str[$i].reason+"<br>"+"借用人:"+str[$i].user+"<br>"+"场地:"+str[$i].room+"<br>"+"时间:"+str[$i].hours+"个小时";
+                            content = "理由:"+str[$i].reason+"<br>"+"借用人:"+str[$i].user+"<br>"+"场地:"+str[$i].room+"<br>"+"时间:"+str[$i].hours/2+"个小时";
                             var check = $("html").find("."+str[$i].day);
                             if(check.length<1){
                                 $i++;
