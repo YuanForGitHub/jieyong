@@ -56,7 +56,6 @@ $room_id = $_SESSION['room_id'];
             background-color: yellow;
         }
         .nav-left{
-            border: 1px solid red;
             border-radius: 0px 30px 10px 0px;
             background-color: #FFFF99;
             opacity: 0.8;
