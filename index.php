@@ -1,14 +1,13 @@
 <?php
 include 'conn.php';
-$_SESSION['user'] = 'root';
-$_SESSION['room']='403';
-$_SESSION['user_id']=1;
-$_SESSION['room_id']=1;
+
+if(!isset($_SESSION['user']) || !isset($_SESSION['user_id'])){
+    header("Location: login.html");
+    exit();
+}
 
 $user = $_SESSION['user'];
-$user_id = $_SESSION['user_id'] ;
-$room = $_SESSION['room'];
-$room_id = $_SESSION['room_id'];
+$user_id = $_SESSION['user_id'];
 
 ?>
 
@@ -37,6 +36,7 @@ $room_id = $_SESSION['room_id'];
         }
         .time{
             color: #FFCC00;
+            font-size: 2.1em;
         }
         .body{
             border: 1px solid purple;
@@ -44,13 +44,14 @@ $room_id = $_SESSION['room_id'];
         table {
             float: left;
             width: 12.5%;
+            background-color: #F5F5F5;
         }
         table tr{
             border: 1px solid #DDD;
             height: 30px;
         }
         table td{
-            padding-left: 10%;
+            padding-left: 23%;
         }
         table>tr>td {
             background-color: yellow;
@@ -128,9 +129,7 @@ $room_id = $_SESSION['room_id'];
         <div class="row" style="margin-top: 1%">
             <!-- time -->
             <div class="col-xs-4 time">
-                <h4>
-                    <?php echo date("Y-m-d");?>
-                </h4>
+                <?php echo date("Y-m-d");?>
             </div>
             <!-- classroom -->
             <div class="col-xs-1">
@@ -204,7 +203,7 @@ $room_id = $_SESSION['room_id'];
                 <tr><td>22:30</td></tr>
             </table>
             <table class=<?php echo date("Y-m-d D"); ?>>
-                <tr><td><?php echo date("Y-m-d D"); ?></td></tr>
+                <tr style="background-color: #CDE2F6;"><td><?php echo date("m-d D"); ?></td></tr>
                 <tr class="1 active"><td></td></tr>
                 <tr class="2 active"><td></td></tr>
                 <tr class="3 active"><td></td></tr>
@@ -239,7 +238,7 @@ $room_id = $_SESSION['room_id'];
                 <tr class="32 active"><td></td></tr>
             </table>
             <table class=<?php echo date("Y-m-d D", strtotime("+1 day")); ?>>
-                <tr><td><?php echo date("Y-m-d D", strtotime("+1 day")); ?></td></tr>
+                <tr style="background-color: #CDE2F6;"><td><?php echo date("m-d D", strtotime("+1 day")); ?></td></tr>
                 <tr class="1 active"><td></td></tr>
                 <tr class="2 active"><td></td></tr>
                 <tr class="3 active"><td></td></tr>
@@ -274,7 +273,7 @@ $room_id = $_SESSION['room_id'];
                 <tr class="32 active"><td></td></tr>
             </table>
             <table class=<?php echo date("Y-m-d D", strtotime("+2 day")); ?>>
-                <tr><td><?php echo date("Y-m-d D", strtotime("+2 day")); ?></td></tr>
+                <tr style="background-color: #CDE2F6;"><td><?php echo date("m-d D", strtotime("+2 day")); ?></td></tr>
                 <tr class="1 active"><td></td></tr>
                 <tr class="2 active"><td></td></tr>
                 <tr class="3 active"><td></td></tr>
@@ -309,7 +308,7 @@ $room_id = $_SESSION['room_id'];
                 <tr class="32 active"><td></td></tr>
             </table>
             <table class=<?php echo date("Y-m-d D", strtotime("+3 day")); ?>>
-                <tr><td><?php echo date("Y-m-d D", strtotime("+3 day")); ?></td></tr>
+                <tr style="background-color: #CDE2F6;"><td><?php echo date("m-d D", strtotime("+3 day")); ?></td></tr>
                 <tr class="1 active"><td></td></tr>
                 <tr class="2 active"><td></td></tr>
                 <tr class="3 active"><td></td></tr>
@@ -344,7 +343,7 @@ $room_id = $_SESSION['room_id'];
                 <tr class="32 active"><td></td></tr>
             </table>
             <table class=<?php echo date("Y-m-d D", strtotime("+4 day")); ?>>
-                <tr><td><?php echo date("Y-m-d D", strtotime("+4 day")); ?></td></tr>
+                <tr style="background-color: #CDE2F6;"><td><?php echo date("m-d D", strtotime("+4 day")); ?></td></tr>
                 <tr class="1 active"><td></td></tr>
                 <tr class="2 active"><td></td></tr>
                 <tr class="3 active"><td></td></tr>
@@ -379,7 +378,7 @@ $room_id = $_SESSION['room_id'];
                 <tr class="32 active"><td></td></tr>
             </table>
             <table class=<?php echo date("Y-m-d D", strtotime("+5 day")); ?>>
-                <tr><td><?php echo date("Y-m-d D", strtotime("+5 day")); ?></td></tr>
+                <tr style="background-color: #CDE2F6;"><td><?php echo date("m-d D", strtotime("+5 day")); ?></td></tr>
                 <tr class="1 active"><td></td></tr>
                 <tr class="2 active"><td></td></tr>
                 <tr class="3 active"><td></td></tr>
@@ -414,7 +413,7 @@ $room_id = $_SESSION['room_id'];
                 <tr class="32 active"><td></td></tr>
             </table>
             <table class=<?php echo date("Y-m-d D", strtotime("+6 day")); ?>>
-                <tr><td><?php echo date("Y-m-d D", strtotime("+6 day")); ?></td></tr>
+                <tr style="background-color: #CDE2F6;"><td><?php echo date("m-d D", strtotime("+6 day")); ?></td></tr>
                 <tr class="1 active"><td></td></tr>
                 <tr class="2 active"><td></td></tr>
                 <tr class="3 active"><td></td></tr>
@@ -454,13 +453,16 @@ $room_id = $_SESSION['room_id'];
     <!-- nav-left -->
     <div class="nav-left">
         <div class="nav-content text-center" style="border-radius: 0px 30px 0px 0px">
-            <a href="loginOut.php">退出登录</a>
+            <a href="logOut.php">退出登录</a>
         </div>
         <div class="nav-content text-center">
             <a href="pswChange.php">修改密码</a>
         </div>
-        <div class="nav-content text-center" style="border-radius: 0px 0px 10px 0px">
+        <div class="nav-content text-center lucky" style="border-radius: 0px 0px 10px 0px">
             <a href="friend.php">小幸运</a>
+        </div>
+        <div class="nav-content text-center edit">
+            <a href="editUsers.php">编辑用户</a>
         </div>
     </div>
 
@@ -638,6 +640,12 @@ $room_id = $_SESSION['room_id'];
                 // $(".cover").css("display", "true");
                 $(".cover").show();
             })
+            if("<?php echo $user; ?>" === 'root'){
+                $(".lucky").hide();
+            }
+            else{
+                $(".edit").hide();
+            }
         })
     </script>
 </body>
