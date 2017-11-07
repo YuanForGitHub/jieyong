@@ -16,7 +16,6 @@ while($row = mysqli_fetch_array($result)){
     $data[$i]['user'] = $row['user'];
     $data[$i]['user_id'] = $row['user_id'];
     $data[$i]['room'] = $row['room'];
-    $data[$i]['room_id'] = $row['room_id'];
     $data[$i]['reason'] = $row['reason'];
     $data[$i]['hours'] = $row['hours'];
     $data[$i]['day'] = $row['day'];

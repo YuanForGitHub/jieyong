@@ -459,10 +459,10 @@ $user_id = $_SESSION['user_id'];
             <a href="pswChange.php">修改密码</a>
         </div>
         <div class="nav-content text-center lucky" style="border-radius: 0px 0px 10px 0px">
-            <a href="friend.php">小幸运</a>
+            <a href="#">小幸运</a>
         </div>
         <div class="nav-content text-center edit">
-            <a href="editUsers.php">编辑用户</a>
+            <a href="editUser.php" target="_blank">编辑用户</a>
         </div>
     </div>
 
@@ -639,6 +639,11 @@ $user_id = $_SESSION['user_id'];
             $(document).on("click", ".nightLight", function(){
                 // $(".cover").css("display", "true");
                 $(".cover").show();
+            })
+            $(document).on("click", ".lucky", function(){
+                $.post("friend.php", function(data, status){
+                    alert(data);
+                });
             })
             if("<?php echo $user; ?>" === 'root'){
                 $(".lucky").hide();

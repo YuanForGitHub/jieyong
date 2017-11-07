@@ -2,8 +2,9 @@
 include 'conn.php';
 
 // 登录验证代码
-$_SESSION['user_id']=1; // 之后删除
+// $_SESSION['user_id']=1; // 之后删除
 if(!isset($_SESSION['user_id'])){
+    header("Location: login.html");
     exit();
 }
 
@@ -69,5 +70,4 @@ function union($ancestor, $change){
 $friend_id = find($user_id);
 $arr = add($user_id, $friend_id);
 union($arr['ancestor'], $arr['change']);
-
 ?>
