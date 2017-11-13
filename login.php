@@ -2,7 +2,7 @@
 require 'conn.php';
 
 if(isset($_POST['u_submit'])){
-    $sql = "SELECT * FROM user WHERE name='{$_POST['uname']}' AND psw='{$_POST['upsd']}'";
+    $sql = "SELECT * FROM user WHERE student_id='{$_POST['uname']}' AND psw='{$_POST['upsd']}'";
     $result = mysqli_query($conn, $sql);
     $num = mysqli_num_rows($result);
     if($num>0){
