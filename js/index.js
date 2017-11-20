@@ -12,8 +12,7 @@ $(function(){
             var del; //delete数据属性，因为delete是保留字，所以只能用del当变量
             var $itself;
             var $div;// 创建$('<div class="add"></div>')
-            var user = "<?php echo $_SESSION['user']; ?>"; //用来判断是否是自己的预定
-            alert(user);
+            // var user = "<?php echo $_SESSION['user']; ?>"; //用来判断是否是自己的预定
             $(".active").mousedown(function(){
                 $("body").append('<div class="add">拖住选择</div>');
                 
@@ -152,7 +151,7 @@ $(function(){
                     alert(data);
                 });
             })
-            if("<?php echo $user; ?>" === 'root'){
+            if(user === 'root'){
                 $(".lucky").hide();
             }
             else{
