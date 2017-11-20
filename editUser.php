@@ -10,7 +10,7 @@ else if(isset($_GET['del'])){
     mysqli_query($conn, $sql);
 }
 else if(isset($_POST['student_id'])){
-    $sql = "INSERT INTO user SET student_id='{$_POST['student_id']}', name='{$_POST['name']}'";
+$sql = "INSERT INTO user SET student_id='{$_POST['student_id']}', name='{$_POST['name']}', grade='{$_POST['grade']}', major='{$_POST['major']}', class='{$_POST['class']}'";
     mysqli_query($conn, $sql);
 
     $sql = "SELECT * FROM user WHERE student_id='{$_POST['student_id']}'";
@@ -44,12 +44,17 @@ else if(isset($_POST['student_id'])){
     <div class="container">
         <table class="table table-striped table-responsive table-bordered">
             <tr>
-                <th>id</th><th>name</th><th>delete</th>
+                <th>id</th><th>grade</th><th>major</th><th>class</th><th>name</th><th>delete</th>
             </tr>
             <tr>
                 <div class="container-fluid">
                 <form class="form row" action="editUser.php" method="POST" >
-                <td><input class="form-control col-xs-3" type="text" name="student_id" placeholder="Id" required></td><td><input class="form-control col-xs-3" type="text" name="name" placeholder="Name" required></td><td><input class="btn btn-info" type="submit" value="添加"></td>
+                <td><input class="form-control col-xs-3" type="text" name="student_id" placeholder="Id" required></td>
+                <td><input class="form-control col-xs-3" type="text" name="grade" placeholder="Grade" required></td>
+                <td><input class="form-control col-xs-3" type="text" name="major" placeholder="Major" required></td>
+                <td><input class="form-control col-xs-3" type="text" name="class" placeholder="Class" required></td>
+                <td><input class="form-control col-xs-3" type="text" name="name" placeholder="Name" required></td>
+                <td><input class="btn btn-info" type="submit" value="添加"></td>
                 </form>
                 </div>
             </tr>
@@ -60,7 +65,7 @@ else if(isset($_POST['student_id'])){
                 $result = mysqli_query($conn, $sql);
                 while($row = mysqli_fetch_assoc($result)){
                     echo "<tr>";
-                    echo "<td>".$row['student_id']."</td><td>".$row['name']."</td><td>"."<a href='editUser.php?del={$row['id']}' class='btn btn-warning'>删除</a></td>";
+                    echo "<td>".$row['student_id']."</td><td>".$row['grade']."</td><td>".$row['major']."</td><td>".$row['class']."</td><td>".$row['name']."</td><td>"."<a href='editUser.php?del={$row['id']}' class='btn btn-warning'>删除</a></td>";
                     echo "</tr>";
                 }
             ?>
