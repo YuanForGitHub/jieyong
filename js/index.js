@@ -13,6 +13,7 @@ $(function(){
             var $itself;
             var $div;// 创建$('<div class="add"></div>')
             var user = "<?php echo $_SESSION['user']; ?>"; //用来判断是否是自己的预定
+            alert(user);
             $(".active").mousedown(function(){
                 $("body").append('<div class="add">拖住选择</div>');
                 

@@ -402,7 +402,11 @@ $user_id = $_SESSION['user_id'];
     </div>
 
     </button>
+    <script>
+        var user = "<?php echo $_SESSION['user']; ?>"; //用来判断是否是自己的预定，而且含有PHP语句，不能放到js里面
+    </script>
     <script src="js/index.js"></script>
+    
 </body>
 
 </html>
