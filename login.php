@@ -2,6 +2,7 @@
 require 'conn.php';
 
 if(isset($_POST['u_submit'])){
+    $_POST['upsd'] = md5($_POST['upsd']); //密码加密
     $sql = "SELECT * FROM user WHERE student_id='{$_POST['uname']}' AND psw='{$_POST['upsd']}'";
     $result = mysqli_query($conn, $sql);
     $num = mysqli_num_rows($result);
