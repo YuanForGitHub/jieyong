@@ -38,6 +38,7 @@ else if(isset($_POST['first'])){
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
     <link href="/css/bootstrap.css" type="text/css" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="css/bootstrap-responsive.css">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
     <script src="js/jquery-3.2.1.min.js"></script>
     <script type="text/JavaScript" src="js/bootstrap.js"></script>
     <style>

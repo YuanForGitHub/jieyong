@@ -20,6 +20,7 @@ $user_id = $_SESSION['user_id'];
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/index.css">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
     <script src="js/jquery-3.2.1.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <title>课室借用</title>

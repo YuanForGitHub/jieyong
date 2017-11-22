@@ -5,19 +5,22 @@ if(!isset($_SESSION['user'])){
     header("Location: login.html");
     exit();
 }
-else if(isset($_GET['del'])){
+else if(isset($_GET['del'])){ //删除用户
     $sql = "DELETE FROM user WHERE id={$_GET['del']}";
     mysqli_query($conn, $sql);
 }
-else if(isset($_POST['student_id'])){
-$sql = "INSERT INTO user SET student_id='{$_POST['student_id']}', name='{$_POST['name']}', grade='{$_POST['grade']}', major='{$_POST['major']}', class='{$_POST['class']}'";
+else if(isset($_POST['student_id'])){ //添加用户
+    //添加
+    $sql = "INSERT INTO user SET student_id='{$_POST['student_id']}', name='{$_POST['name']}', grade='{$_POST['grade']}', major='{$_POST['major']}', class='{$_POST['class']}'";
     mysqli_query($conn, $sql);
 
+    //选出最新的用户id
     $sql = "SELECT * FROM user WHERE student_id='{$_POST['student_id']}'";
     $result = mysqli_query($conn, $sql);
     $row = mysqli_fetch_assoc($result);
 
-    $sql = "SELECT * FROM user WHERE student_id='{$row['id']}'";
+    //祖先初始化为本身id
+    $sql = "UPDATE user SET ancestor={$row['id']} WHERE id='{$row['id']}'";
     mysqli_query($conn, $sql);
 }
 ?>
@@ -30,6 +33,7 @@ $sql = "INSERT INTO user SET student_id='{$_POST['student_id']}', name='{$_POST[
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
     <script src="js/jquery-3.2.1.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <title>Edit</title>
@@ -46,6 +50,7 @@ $sql = "INSERT INTO user SET student_id='{$_POST['student_id']}', name='{$_POST[
     <table class="table table-striped table-responsive table-bordered table-hover">
         <th>Recent Users</th><th>Recent Rooms</th><th>Reason</th>
         <?php
+        //最近活跃情况
             require_once 'conn.php';
 
             $sql = "SELECT * FROM rend ORDER BY id DESC LIMIT 3";
@@ -75,6 +80,7 @@ $sql = "INSERT INTO user SET student_id='{$_POST['student_id']}', name='{$_POST[
                 </div>
             </tr>
             <?php
+            //所有用户
                 require_once 'conn.php';
 
                 $sql = "SELECT * FROM user";
