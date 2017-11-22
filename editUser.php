@@ -42,7 +42,23 @@ $sql = "INSERT INTO user SET student_id='{$_POST['student_id']}', name='{$_POST[
 
 <body>
     <div class="container">
-        <table class="table table-striped table-responsive table-bordered">
+    <hr>
+    <table class="table table-striped table-responsive table-bordered table-hover">
+        <th>Recent Users</th><th>Recent Rooms</th><th>Reason</th>
+        <?php
+            require_once 'conn.php';
+
+            $sql = "SELECT * FROM rend ORDER BY id DESC LIMIT 3";
+            $result = mysqli_query($conn, $sql);
+            while($row = mysqli_fetch_assoc($result)){
+                echo "<tr>";
+                echo "<td>".$row['user']."</td><td>".$row['room']."</td><td>".$row['reason']."</td>";
+                echo "<tr>";
+            }
+        ?>
+    </table>
+    <hr>
+        <table class="table table-striped table-responsive table-bordered table-hover">
             <tr>
                 <th>id</th><th>grade</th><th>major</th><th>class</th><th>name</th><th>delete</th>
             </tr>

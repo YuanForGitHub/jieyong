@@ -8,7 +8,7 @@ if(!isset($_SESSION['user'])){
 else if(isset($_POST['first'])){
     $table = ($_SESSION['user']==='root') ? 'admin' : 'user';
     $id = $_SESSION['user_id'];
-    $psw = $_POST['first'];
+    $psw = md5($_POST['first']);
     $sql = "SELECT * FROM {$table} WHERE id={$id} AND psw='{$psw}'";
     $result = mysqli_query($conn, $sql);
     if(mysqli_num_rows($result)<1){
@@ -18,7 +18,7 @@ else if(isset($_POST['first'])){
         echo '<script>alert("请确认要修改的密码");</script>';
     }
     else{
-        $psw = $_POST['second'];
+        $psw = md5($_POST['second']);
         $sql = "UPDATE {$table} SET psw='{$psw}' WHERE id={$id}";
         mysqli_query($conn, $sql);
         header("Location: index.php");
